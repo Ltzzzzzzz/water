@@ -12,4 +12,37 @@ const formatTime = date => {
 	return [year, month, day].map(paddingZero).join('/');
 };
 
-export { formatTime };
+// 防抖
+let timer;
+const debounce = (fn, delay = 300) => {
+	return () => {
+		// 清除上一次延时器
+		clearTimeout(timer);
+		timer = setTimeout(() => {
+			fn.apply(this);
+		}, delay);
+	};
+};
+
+// 节流函数
+let lastTime;
+const throttle = (fn, delay = 300) => {
+	return function() {
+		// 记录当前函数触发的时间
+		const nowTime = Date.now();
+		if (lastTime && nowTime - lastTime < delay) {
+			clearTimeout(timer);
+			timer = setTimeout(() => {
+				// 记录上一次函数触发的时间
+				lastTime = nowTime;
+				// 修正this指向问题
+				fn.apply(this);
+			}, delay);
+		} else {
+			lastTime = nowTime;
+			fn.apply(this);
+		}
+	};
+};
+
+export { formatTime, debounce, throttle };

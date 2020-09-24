@@ -61,9 +61,18 @@ const routes = [
 		name: 'Login',
 		meta: {
 			index: 4,
-			title: '用户登陆'
+			title: '用户绑定'
 		},
 		component: () => import(/* webpackChunkName: "Login" */ 'views/login/login')
+	},
+	{
+		path: '/UserInfo',
+		name: 'UserInfo',
+		meta: {
+			index: 4,
+			title: '客户档案'
+		},
+		component: () => import(/* webpackChunkName: "UserInfo" */ 'views/userInfo/userInfo')
 	},
 	/* ==========四级路由 end========== */
 

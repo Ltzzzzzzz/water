@@ -1,7 +1,7 @@
 <template>
 	<div class="pageNav">
 		<div class="back" v-if="link">
-			<router-link :to="link" replace>
+			<router-link :to="$route.params.from ? $route.params.from : link" replace>
 				<div class="backWrapper">
 					<van-icon name="arrow-left" color="#ffffff"></van-icon>
 					<span>返回</span>
@@ -22,7 +22,12 @@
 <script>
 export default {
 	name: 'PageNav',
-	props: ['link', 'title']
+	props: ['link', 'title'],
+	methods: {
+		back() {
+			this.$router.go(-1);
+		}
+	}
 };
 </script>
 

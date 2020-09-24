@@ -2,14 +2,22 @@
     .titleWrapper {
 		padding: 0 30px;
 		display: flex;
-		align-items: center;
+		flex-direction: column;
 		width: 100%;
-		height: 20vw;
+		min-height: 20vw;
 		font-size: 14px;
 		background-image: linear-gradient(to right, #4199b4, #1d7eb8);
-		p {
+		.info {
+			display: flex;
+			align-items: center;
 			line-height: 1.5;
 			color: #ffffff;
+			.iconWrapper {
+				margin-left: 5px;
+			}
 		}
-    }
+	}
+	.yearPickerWrapper {
+		margin: 6px 0;
+	}
 }

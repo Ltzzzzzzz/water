@@ -8,14 +8,14 @@
 			</p>
 		</div>
 		<div class="container">
-			<div class="tipWrapper" v-if="!showList">
-				<van-icon name="bulb-o" size="40" color="#ee0a24" @click="showList = true" />
+			<div class="tipWrapper" v-if="!list.length">
+				<van-icon name="bulb-o" size="40" color="#ee0a24" />
 				<h4>您还没有绑定，请绑定后查看</h4>
 				<van-button round block size="small" type="info" text="登陆" to="/Login"></van-button>
 			</div>
 			<div class="userList" v-else>
 				<div class="userListWrapper">
-					<UserItem v-for="item in list" :key="item" />
+					<UserItem v-for="item in list" :key="item" @remove="removeItem" />
 				</div>
 				<div class="buttonWrapper">
 					<van-button block plain type="info" text="绑定户号" to="/Login" />
@@ -34,9 +34,13 @@ export default {
 	},
 	data() {
 		return {
-			list: [1],
-			showList: true
+			list: [1]
 		};
+	},
+	methods: {
+		removeItem() {
+			this.list.splice(0, 1);
+		}
 	}
 };
 </script>
