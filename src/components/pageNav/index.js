@@ -1,4 +1,4 @@
-import pageNav from './src/pageNav.vue';
+import pageNav from './src';
 
 const PageNavComponent = {
 	install(Vue) {

@@ -1,7 +1,12 @@
 <template>
 	<div id="login" class="pageContainer">
 		<PageNav link="/User" :title="$route.meta.title"></PageNav>
-		<Banner></Banner>
+		<div class="titleWrapper">
+			<p>
+				尊敬的用户 <br />
+				登陆获取更多功能
+			</p>
+		</div>
 		<div class="container">
 			<van-form @submit="submit">
 				<div class="formWrapper">
@@ -33,23 +38,11 @@ export default {
 		};
 	},
 	methods: {
-		submit(v) {
-			console.log(v);
-		}
+		submit(v) {}
 	}
 };
 </script>
 
 <style lang="scss" scoped>
-#login {
-	.container {
-		.formWrapper {
-			border-radius: 8px;
-			overflow: hidden;
-		}
-		.button {
-			margin: 20px;
-		}
-	}
-}
+@import 'css/login.scss';
 </style>

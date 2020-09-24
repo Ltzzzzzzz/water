@@ -52,6 +52,7 @@ export default {
 			align-items: center;
 			span {
 				color: #ffffff;
+				font-size: 14px;
 			}
 		}
 	}
@@ -61,6 +62,7 @@ export default {
 		text-align: center;
 		font-weight: normal;
 		color: #ffffff;
+		font-size: 14px;
 	}
 	.goHome {
 		position: absolute;

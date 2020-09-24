@@ -11,7 +11,7 @@
 import { formatTime } from 'js/utils';
 export default {
 	name: 'DatePicker',
-	props: ['value', 'placeholder', 'name', 'rules'],
+	props: ['value', 'placeholder', 'name', 'rules', 'forward'],
 	data() {
 		return {
 			currentDate: new Date(),
@@ -19,9 +19,20 @@ export default {
 		};
 	},
 	created() {
-		this.$emit('input', formatTime(this.currentDate));
+		if (this.forward) {
+			this.$emit('input', formatTime(this.forwardDate(this.forward)));
+		} else {
+			this.$emit('input', formatTime(this.currentDate));
+		}
 	},
 	methods: {
+		forwardDate(n) {
+			let cur = new Date(),
+				y = cur.getFullYear() - n,
+				m = cur.getMonth(),
+				d = cur.getDate();
+			return new Date(y, m, d);
+		},
 		onConfirm(date) {
 			this.$emit('input', formatTime(this.currentDate));
 			this.showPicker = false;

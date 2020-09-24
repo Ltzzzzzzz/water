@@ -26,8 +26,12 @@
 </template>
 
 <script>
+import Banner from './components/Banner';
 export default {
-	name: 'Home'
+	name: 'Home',
+	components: {
+		Banner
+	}
 };
 </script>
 

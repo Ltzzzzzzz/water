@@ -1,4 +1,4 @@
-import DatePicker from './src/datePicker';
+import DatePicker from './src';
 
 const DatePickerComponent = {
 	install(Vue) {

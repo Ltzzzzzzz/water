@@ -1,12 +1,7 @@
 <template>
 	<div id="app">
-		<keep-alive>
-			<transition :name="transitionName">
-				<router-view v-if="$route.meta.keepAlive" />
-			</transition>
-		</keep-alive>
 		<transition :name="transitionName">
-			<router-view v-if="!$route.meta.keepAlive" />
+			<router-view />
 		</transition>
 	</div>
 </template>
@@ -55,6 +50,7 @@ export default {
 		height: 100%;
 		.container {
 			padding: 10px;
+			padding-bottom: 60px;
 		}
 	}
 }
