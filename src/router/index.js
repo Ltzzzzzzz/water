@@ -44,6 +44,15 @@ const routes = [
 		},
 		component: () => import(/* webpackChunkName: "User" */ 'views/user/user')
 	},
+	{
+		path: '/WaterBillList',
+		name: 'WaterBillList',
+		meta: {
+			index: 3,
+			title: '水费清单'
+		},
+		component: () => import(/* webpackChunkName: "WaterBillList" */ 'views/waterBillList/waterBillList')
+	},
 	/* ==========三级路由 end========== */
 
 	/* ==========四级路由 start========== */

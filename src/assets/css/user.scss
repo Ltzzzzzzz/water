@@ -28,8 +28,9 @@
         .userList {
             border-radius: 8px;
             overflow: hidden;
-            /deep/.van-list__loading, /deep/.van-list__finished-text {
-                background-color: #ffffff;
+            .buttonWrapper {
+                margin: 20px 0;
+                text-align: center;
             }
         }
     }

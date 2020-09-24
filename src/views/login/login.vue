@@ -4,7 +4,7 @@
 		<div class="titleWrapper">
 			<p>
 				尊敬的用户 <br />
-				登陆获取更多功能
+				绑定户号获取更多功能
 			</p>
 		</div>
 		<div class="container">
@@ -14,7 +14,7 @@
 					<van-field v-model="accountName" name="accountName" label="户名" placeholder="户名" :rules="rules.accountName" />
 				</div>
 				<div class="button">
-					<van-button size="small" text="登陆" round block type="info" native-type="submit" />
+					<van-button size="small" text="绑定" round block type="info" native-type="submit" />
 				</div>
 			</van-form>
 			<div class="button">
