@@ -1,24 +1,26 @@
 <template>
 	<div id="login" class="pageContainer">
 		<PageNav link="/User" :title="$route.meta.title"></PageNav>
-		<div class="titleWrapper">
-			<p>
-				尊敬的用户 <br />
-				绑定户号获取更多功能
-			</p>
-		</div>
-		<div class="container">
-			<van-form @submit="submit">
-				<div class="formWrapper">
-					<van-field v-model="accountNumber" name="accountNumber" label="户号" placeholder="户号" :rules="rules.accountNumber" />
-					<van-field v-model="accountName" name="accountName" label="户名" placeholder="户名" :rules="rules.accountName" />
-				</div>
+		<div class="scrollContainer">
+			<div class="titleWrapper">
+				<p>
+					尊敬的用户 <br />
+					绑定户号获取更多功能
+				</p>
+			</div>
+			<div class="container">
+				<van-form @submit="submit">
+					<div class="formWrapper">
+						<van-field v-model="accountNumber" name="accountNumber" label="户号" placeholder="户号" :rules="rules.accountNumber" />
+						<van-field v-model="accountName" name="accountName" label="户名" placeholder="户名" :rules="rules.accountName" />
+					</div>
+					<div class="button">
+						<van-button size="small" text="绑定" round block type="info" native-type="submit" />
+					</div>
+				</van-form>
 				<div class="button">
-					<van-button size="small" text="绑定" round block type="info" native-type="submit" />
+					<van-button size="small" text="注册" round block type="primary" to="/Register" />
 				</div>
-			</van-form>
-			<div class="button">
-				<van-button size="small" text="注册" round block type="primary" to="/Register" />
 			</div>
 		</div>
 	</div>

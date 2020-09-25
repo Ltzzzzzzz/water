@@ -1,7 +1,7 @@
 <template>
 	<div class="queryWaterBillItem">
 		<div class="switchWrapper"><van-switch v-if="data.finish" size="16" v-model="data.check" active-color="#07c160" inactive-color="#ee0a24" @click.stop /></div>
-		<router-link to="/QueryWaterBillDetail" class="detailContainer">
+		<router-link :to="{ name: 'QueryWaterBillDetail', params: { keepAlive: $route.name } }" class="detailContainer">
 			<div class="detailWrapper">
 				<div class="infoWrapper">
 					<span class="label">总金额</span>

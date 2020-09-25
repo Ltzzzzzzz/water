@@ -79,7 +79,7 @@ const routes = [
 		name: 'UserInfo',
 		meta: {
 			index: 4,
-			title: '客户档案'
+			title: '客户详情'
 		},
 		component: () => import(/* webpackChunkName: "UserInfo" */ 'views/userInfo/userInfo')
 	},
