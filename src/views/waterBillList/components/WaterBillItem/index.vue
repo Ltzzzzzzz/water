@@ -1,7 +1,7 @@
 <template>
 	<div class="waterBillItem">
 		<p class="date">
-			抄表时间：2020-07-23至2020-09-21
+			抄表时间：2020-07-23 至 2020-09-21
 		</p>
 		<div class="moneyWrapper">
 			<p class="money">57.2元</p>
@@ -74,15 +74,14 @@ export default {
 				display: flex;
 				line-height: 24px;
 				height: 24px;
-				font-size: 12px;
 				span {
 					flex: 1;
-					color: #555555;
+					color: #333333;
 					&.label {
 						display: inline-block;
-						flex: 0 0 50px;
-						margin-right: 8px;
-						width: 50px;
+						flex: 0 0 70px;
+						margin-right: 10px;
+						width: 70px;
 						color: #707070;
 						text-align: justify;
 						&:after {

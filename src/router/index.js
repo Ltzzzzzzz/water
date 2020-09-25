@@ -53,6 +53,15 @@ const routes = [
 		},
 		component: () => import(/* webpackChunkName: "WaterBillList" */ 'views/waterBillList/waterBillList')
 	},
+	{
+		path: '/ElectronicInvoice',
+		name: 'ElectronicInvoice',
+		meta: {
+			index: 3,
+			title: '电子发票'
+		},
+		component: () => import(/* webpackChunkName: "ElectronicInvoice" */ 'views/electronicInvoice/electronicInvoice')
+	},
 	/* ==========三级路由 end========== */
 
 	/* ==========四级路由 start========== */

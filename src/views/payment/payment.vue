@@ -13,7 +13,7 @@
 					<van-grid-item icon="orders-o" to="/QueryWaterBill" text="水费查缴" />
 					<van-grid-item icon="user-o" to="/User" text="客户档案" />
 					<van-grid-item icon="balance-list-o" to="/WaterBillList" text="水费清单" />
-					<van-grid-item icon="setting-o" text="选项" />
+					<van-grid-item icon="points" to="/ElectronicInvoice" text="电子发票" />
 					<van-grid-item icon="setting-o" text="选项" />
 					<van-grid-item icon="setting-o" text="选项" />
 					<van-grid-item icon="setting-o" text="选项" />
