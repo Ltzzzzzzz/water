@@ -16,9 +16,17 @@
 			<YearPicker />
 		</div>
 		<div class="container">
-			<WaterBillItem v-for="item in list" :key="item">
-				<van-button plain type="info" text="打印通知单" />
-			</WaterBillItem>
+			<div class="tip" v-if="!list.length">
+				<div class="iconWrapper">
+					<van-icon size="40" color="#707070" name="question-o" />
+					<p class="desc">暂无数据</p>
+				</div>
+			</div>
+			<div class="waterBillItemList" v-else>
+				<WaterBillItem v-for="item in list" :key="item">
+					<van-button plain type="info" text="打印通知单" />
+				</WaterBillItem>
+			</div>
 		</div>
 	</div>
 </template>

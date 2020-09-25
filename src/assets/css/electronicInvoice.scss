@@ -20,4 +20,20 @@
 	.yearPickerWrapper {
 		margin: 6px 0;
 	}
+	.container {
+		.tip {
+			display: flex;
+			justify-content: center;
+			.iconWrapper {
+				margin: 20vh 0;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				.desc {
+					margin-top: 10px;
+					color: #707070;
+				}
+			}
+		}
+	}
 }
