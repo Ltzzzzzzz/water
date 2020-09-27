@@ -23,17 +23,16 @@ export default {
 	watch: {
 		//使用watch 监听$router的变化
 		$route(to, from) {
-			//如果to索引大于from索引,判断为前进状态,反之则为后退状态
-			if (to.meta.index > from.meta.index) {
-				//设置动画名称
-				this.transitionName = 'slide-left';
-			} else {
-				if (to.params.reverse) {
-					this.transitionName = 'slide-left';
-				} else {
-					this.transitionName = 'slide-right';
-				}
+			let isBack = this.$router.isBack; //  监听路由变化时的状态为前进还是后退
+			if (to.path === '/') {
+				isBack = true;
 			}
+			if (isBack) {
+				this.transitionName = 'slide-right';
+			} else {
+				this.transitionName = 'slide-left';
+			}
+			this.$router.isBack = false;
 		}
 	}
 };
@@ -44,8 +43,6 @@ export default {
 	width: 100%;
 	height: 100%;
 	.pageContainer {
-		display: flex;
-		flex-direction: column;
 		width: 100%;
 		height: 100%;
 		overflow: hidden;
@@ -56,19 +53,18 @@ export default {
 			left: 0;
 			bottom: 0;
 			right: 0;
-			background: url('./assets/images/bg.png') no-repeat;
+			// background-image: url('./assets/images/bg.png') ;
+			background-image: url('./assets/images/ripple.png');
+			background-repeat: no-repeat;
 			background-size: 100%;
-			background-position: left bottom;
+			background-position: center bottom;
 			background-color: #f7f8fa;
+			opacity: 0.7;
 			z-index: -1;
 		}
-		.scrollContainer {
-			flex: 1;
-			overflow: auto;
-			.container {
-				padding: 10px;
-				padding-bottom: 60px;
-			}
+		.container {
+			padding: 10px;
+			padding-bottom: 60px;
 		}
 	}
 }

@@ -1,15 +1,13 @@
 <template>
 	<div class="pageNav">
-		<div class="back" v-if="link">
-			<router-link :to="$route.params.from ? $route.params.from : link" replace>
-				<div class="backWrapper">
-					<van-icon name="arrow-left" color="#ffffff"></van-icon>
-					<span>返回</span>
-				</div>
-			</router-link>
+		<div class="back" v-if="back">
+			<div class="backWrapper" @click="goBack">
+				<van-icon name="arrow-left" color="#ffffff"></van-icon>
+				<span>返回</span>
+			</div>
 		</div>
 		<h2 class="routeTitle">{{ title }}</h2>
-		<div class="goHome" v-if="link">
+		<div class="goHome" v-if="back">
 			<router-link to="/" replace>
 				<div class="goHomeWrapper">
 					<van-icon name="wap-home-o" size="20" color="#ffffff"></van-icon>
@@ -22,10 +20,10 @@
 <script>
 export default {
 	name: 'PageNav',
-	props: ['link', 'title'],
+	props: ['link', 'title', 'back'],
 	methods: {
-		back() {
-			this.$router.go(-1);
+		goBack() {
+			this.$router.goBack();
 		}
 	}
 };
