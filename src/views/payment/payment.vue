@@ -6,7 +6,7 @@
 				请选择您所需办理的业务
 			</p>
 		</Navbar>
-		<Title :title="$route.meta.title" />
+		<PageTitle :title="$route.meta.title" />
 		<div class="container">
 			<div class="routers">
 				<van-grid clickable :column-num="3">

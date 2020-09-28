@@ -1,5 +1,5 @@
 <template>
-	<div class="titleWrapper">
+	<div class="pageTitle">
 		<div class="title">
 			<div class="line left"></div>
 			<h4>{{ title }}</h4>
@@ -10,13 +10,13 @@
 
 <script>
 export default {
-	name: 'Title',
+	name: 'PageTitle',
 	props: ['title']
 };
 </script>
 
 <style lang="scss" scoped>
-.titleWrapper {
+.pageTitle {
 	padding-top: 20px;
 	padding-bottom: 10px;
 	display: flex;

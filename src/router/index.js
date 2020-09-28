@@ -103,6 +103,38 @@ const routes = [
 			title: '过户'
 		},
 		component: () => import(/* webpackChunkName: "transfer" */ 'views/exchange/views/transfer/transfer')
+	},
+	{
+		path: '/changeBankCard',
+		name: 'changeBankCard',
+		meta: {
+			title: '变更银行卡'
+		},
+		component: () => import(/* webpackChunkName: "bankCard" */ 'views/exchange/views/bankCard/bankCard')
+	},
+	{
+		path: '/changeBillInformation',
+		name: 'changeBillInformation',
+		meta: {
+			title: '变更开票信息'
+		},
+		component: () => import(/* webpackChunkName: "billInformation" */ 'views/exchange/views/billInformation/billInformation')
+	},
+	{
+		path: '/changeContact',
+		name: 'changeContact',
+		meta: {
+			title: '变更联系方式'
+		},
+		component: () => import(/* webpackChunkName: "contact" */ 'views/exchange/views/contact/contact')
+	},
+	{
+		path: '/changeNatureOfWater',
+		name: 'changeNatureOfWater',
+		meta: {
+			title: '变更用水性质'
+		},
+		component: () => import(/* webpackChunkName: "natureOfWater" */ 'views/exchange/views/natureOfWater/natureOfWater')
 	}
 	/* ========== 信息变更结束 ========== */
 ];

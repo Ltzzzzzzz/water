@@ -1,7 +1,7 @@
 <template>
 	<div id="home" class="pageContainer">
 		<Banner />
-		<Title title="网上营业厅" />
+		<PageTitle title="网上营业厅" />
 		<!-- 模块路由 -->
 		<div class="container">
 			<div class="routers">

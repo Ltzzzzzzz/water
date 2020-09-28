@@ -1,8 +1,8 @@
 <template>
-	<div id="transfer" class="pageContainer">
+	<div id="natureOfWater" class="pageContainer">
 		<Navbar>
 			<p class="desc">
-				过户是指在用水地址、口径、性质不变，且无欠费的情况下，需要更改客户名称的业务
+				如您的用水性质发生变化时，可申请此项业务
 			</p>
 		</Navbar>
 		<div class="container">
@@ -17,7 +17,7 @@
 <script>
 import ExChangeModel from 'components/part/ExChangeModel';
 export default {
-	name: 'transfer',
+	name: 'natureOfWater',
 	components: {
 		ExChangeModel
 	}
