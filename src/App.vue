@@ -1,51 +1,27 @@
 <template>
 	<div id="app">
-		<transition :name="transitionName">
-			<keep-alive :include="keepAlive">
-				<router-view />
-			</keep-alive>
-		</transition>
+		<keep-alive :include="keepAlive">
+			<router-view />
+		</keep-alive>
 	</div>
 </template>
 <script>
 export default {
 	name: 'App',
-	data() {
-		return {
-			transitionName: ''
-		};
-	},
 	computed: {
 		keepAlive() {
 			return this.$store.getters['globel/keepAlive'];
-		}
-	},
-	watch: {
-		//使用watch 监听$router的变化
-		$route(to, from) {
-			let isBack = this.$router.isBack; //  监听路由变化时的状态为前进还是后退
-			if (to.path === '/') {
-				isBack = true;
-			}
-			if (isBack) {
-				this.transitionName = 'slide-right';
-			} else {
-				this.transitionName = 'slide-left';
-			}
-			this.$router.isBack = false;
 		}
 	}
 };
 </script>
 <style lang="scss">
-@import 'css/animate.scss';
 #app {
 	width: 100%;
 	height: 100%;
 	.pageContainer {
 		width: 100%;
 		height: 100%;
-		overflow: hidden;
 		&:after {
 			content: '';
 			position: fixed;

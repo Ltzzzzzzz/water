@@ -1,11 +1,13 @@
 <template>
 	<div id="payment" class="pageContainer">
-		<div class="titleWrapper">
-			<p>
-				尊敬的用户 <br />
-				请选择您所需办理的业务
-			</p>
-		</div>
+		<Navbar>
+			<div class="titleWrapper">
+				<p>
+					尊敬的用户 <br />
+					请选择您所需办理的业务
+				</p>
+			</div>
+		</Navbar>
 		<div class="container">
 			<div class="routers">
 				<van-grid clickable :column-num="2">
