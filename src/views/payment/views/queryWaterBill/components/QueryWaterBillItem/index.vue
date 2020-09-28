@@ -7,7 +7,7 @@
 			<div class="finish"></div>
 			<p>已缴清</p>
 		</div>
-		<router-link :to="{ name: 'QueryWaterBillDetail', params: { keepAlive: $route.name } }" class="detailContainer">
+		<router-link :to="{ name: 'queryWaterBillDetail', params: { keepAlive: $route.name } }" class="detailContainer">
 			<div class="detailWrapper">
 				<div class="infoWrapper">
 					<span class="label">总金额</span>
@@ -37,7 +37,7 @@
 
 <script>
 export default {
-	name: 'QueryWaterBillItem',
+	name: 'queryWaterBillItem',
 	props: ['data']
 };
 </script>

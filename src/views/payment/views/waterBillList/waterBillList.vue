@@ -29,10 +29,10 @@
 </template>
 
 <script>
-import YearPicker from 'components/YearPicker';
+import YearPicker from 'components/part/YearPicker';
 import WaterBillItem from './components/WaterBillItem';
 export default {
-	name: 'WaterBillList',
+	name: 'waterBillList',
 	components: {
 		YearPicker,
 		WaterBillItem

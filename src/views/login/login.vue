@@ -17,7 +17,7 @@
 				</div>
 			</van-form>
 			<div class="button">
-				<van-button size="small" text="注册" round block type="primary" to="/Register" />
+				<van-button size="small" text="注册" round block type="primary" to="/register" />
 			</div>
 		</div>
 	</div>
@@ -25,7 +25,7 @@
 
 <script>
 export default {
-	name: 'Login',
+	name: 'login',
 	data() {
 		return {
 			accountNumber: '',

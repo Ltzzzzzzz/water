@@ -38,7 +38,7 @@
 <script>
 import QueryWaterBillItem from './components/QueryWaterBillItem';
 export default {
-	name: 'QueryWaterBill',
+	name: 'queryWaterBill',
 	components: {
 		QueryWaterBillItem
 	},

@@ -29,10 +29,10 @@
 </template>
 
 <script>
-import YearPicker from 'components/YearPicker';
+import YearPicker from 'components/part/YearPicker';
 import ElectronicInvoiceItem from './components/ElectronicInvoiceItem';
 export default {
-	name: 'ElectronicInvoice',
+	name: 'electronicInvoice',
 	components: {
 		YearPicker,
 		ElectronicInvoiceItem

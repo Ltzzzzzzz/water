@@ -47,7 +47,7 @@
 
 <script>
 export default {
-	name: 'QueryWaterBillDetail',
+	name: 'queryWaterBillDetail',
 	mounted() {
 		this.drawChart();
 	},

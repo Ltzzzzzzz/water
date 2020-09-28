@@ -9,7 +9,7 @@
 				</div>
 			</div>
 		</div>
-		<router-link to="/UserInfo">
+		<router-link to="/userInfo">
 			<div class="userDetailInfo">
 				<div class="userDetailInfoWrapper">
 					<div class="infoWrapper">
