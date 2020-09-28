@@ -31,7 +31,9 @@
 						</div>
 					</div>
 				</div>
-				<van-icon color="#555555" name="arrow" />
+				<div class="iconWrapper">
+					<van-icon color="#1989fa" size="20" name="arrow" />
+				</div>
 			</div>
 		</router-link>
 	</div>
@@ -143,6 +145,14 @@ export default {
 				}
 			}
 		}
+	}
+	.iconWrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 4px;
+		border: 2px solid #1989fa;
+		border-radius: 50%;
 	}
 }
 </style>

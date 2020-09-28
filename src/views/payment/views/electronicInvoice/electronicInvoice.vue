@@ -1,5 +1,5 @@
 <template>
-	<div id="waterBillList" class="pageContainer">
+	<div id="electronicInvoice" class="pageContainer">
 		<Navbar>
 			<p class="info">户名：袁敏棠</p>
 			<div class="info">
@@ -21,34 +21,32 @@
 					<p class="desc">暂无数据</p>
 				</div>
 			</div>
-			<div class="waterBillItemList" v-else>
-				<WaterBillItem v-for="item in list" :key="item">
-					<van-button plain type="info" text="打印通知单" />
-				</WaterBillItem>
+			<div class="electronicInvoiceItemList" v-else>
+				<ElectronicInvoiceItem v-for="item in list" :key="item" />
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-import YearPicker from './components/YearPicker';
-import WaterBillItem from './components/WaterBillItem';
+import YearPicker from 'components/YearPicker';
+import ElectronicInvoiceItem from './components/ElectronicInvoiceItem';
 export default {
-	name: 'WaterBillList',
+	name: 'ElectronicInvoice',
 	components: {
 		YearPicker,
-		WaterBillItem
+		ElectronicInvoiceItem
 	},
 	data() {
 		return {
 			accountNumber: '1234567890',
 			accountNumberList: ['1234567890', '0987654321'],
-			list: [1, 2, 3, 4]
+			list: []
 		};
 	}
 };
 </script>
 
 <style lang="scss" scoped>
-@import 'css/waterBillList.scss';
+@import 'css/electronicInvoice.scss';
 </style>

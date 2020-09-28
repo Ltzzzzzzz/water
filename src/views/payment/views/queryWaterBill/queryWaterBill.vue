@@ -28,9 +28,7 @@
 					</div>
 				</div>
 				<van-list v-model="loading" :finished="finished" error-text="请求失败，点击重新加载" finished-text="没有更多了" @load="onLoad">
-					<van-cell v-for="item in list" :key="item.id">
-						<QueryWaterBillItem :data="item" />
-					</van-cell>
+					<QueryWaterBillItem v-for="item in list" :key="item.id" :data="item" />
 				</van-list>
 			</div>
 		</div>
@@ -89,7 +87,7 @@ export default {
 						totalPrice: Math.round(Math.random() * 50 * 3 * 100) / 100,
 						waterVolume: Math.floor(Math.random() * 100),
 						lastTimeVolume: Math.ceil(this.lastTimeVolume + (this.list[this.list.length - 1] ? this.list[this.list.length - 1].waterVolume : 0)),
-						finish: i > 8 ? true : false,
+						finish: i < 9 ? true : false,
 						check: !this.finish,
 						metarDate: `2020-${i < 10 ? '0' + (i - 1) : i - 1}-20至2020-${i < 10 ? '0' + i : i}-19`
 					};

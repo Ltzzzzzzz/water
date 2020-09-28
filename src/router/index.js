@@ -8,16 +8,31 @@ const routes = [
 		path: '/',
 		name: 'Home',
 		meta: {
-			index: 1,
 			title: '全部业务'
 		},
 		component: () => import(/* webpackChunkName: "Home" */ 'views/home/home')
 	},
 	{
+		path: '/Login',
+		name: 'Login',
+		meta: {
+			title: '用户绑定'
+		},
+		component: () => import(/* webpackChunkName: "Login" */ 'views/login/login')
+	},
+	{
+		path: '/Register',
+		name: 'Register',
+		meta: {
+			title: '用户注册'
+		},
+		component: () => import(/* webpackChunkName: "Register" */ 'views/register/register')
+	},
+	/* ========== 水费查缴开始 ========== */
+	{
 		path: '/Payment',
 		name: 'Payment',
 		meta: {
-			index: 0,
 			title: '水费查缴'
 		},
 		component: () => import(/* webpackChunkName: "Payment" */ 'views/payment/payment')
@@ -26,74 +41,51 @@ const routes = [
 		path: '/QueryWaterBill',
 		name: 'QueryWaterBill',
 		meta: {
-			index: 0,
 			title: '查询缴费'
 		},
-		component: () => import(/* webpackChunkName: "QueryWaterBill" */ 'views/queryWaterBill/queryWaterBill')
+		component: () => import(/* webpackChunkName: "QueryWaterBill" */ 'views/payment/views/queryWaterBill/queryWaterBill')
 	},
 	{
 		path: '/User',
 		name: 'User',
 		meta: {
-			index: 0,
 			title: '客户档案'
 		},
-		component: () => import(/* webpackChunkName: "User" */ 'views/user/user')
+		component: () => import(/* webpackChunkName: "User" */ 'views/payment/views/user/user')
 	},
 	{
 		path: '/WaterBillList',
 		name: 'WaterBillList',
 		meta: {
-			index: 0,
 			title: '水费清单'
 		},
-		component: () => import(/* webpackChunkName: "WaterBillList" */ 'views/waterBillList/waterBillList')
+		component: () => import(/* webpackChunkName: "WaterBillList" */ 'views/payment/views/waterBillList/waterBillList')
 	},
 	{
 		path: '/ElectronicInvoice',
 		name: 'ElectronicInvoice',
 		meta: {
-			index: 0,
 			title: '电子发票'
 		},
-		component: () => import(/* webpackChunkName: "ElectronicInvoice" */ 'views/electronicInvoice/electronicInvoice')
-	},
-	{
-		path: '/Login',
-		name: 'Login',
-		meta: {
-			index: 0,
-			title: '用户绑定'
-		},
-		component: () => import(/* webpackChunkName: "Login" */ 'views/login/login')
+		component: () => import(/* webpackChunkName: "ElectronicInvoice" */ 'views/payment/views/electronicInvoice/electronicInvoice')
 	},
 	{
 		path: '/UserInfo',
 		name: 'UserInfo',
 		meta: {
-			index: 0,
 			title: '客户详情'
 		},
-		component: () => import(/* webpackChunkName: "UserInfo" */ 'views/userInfo/userInfo')
-	},
-	{
-		path: '/Register',
-		name: 'Register',
-		meta: {
-			index: 0,
-			title: '用户注册'
-		},
-		component: () => import(/* webpackChunkName: "Register" */ 'views/register/register')
+		component: () => import(/* webpackChunkName: "UserInfo" */ 'views/payment/views/userInfo/userInfo')
 	},
 	{
 		path: '/QueryWaterBillDetail',
 		name: 'QueryWaterBillDetail',
 		meta: {
-			index: 0,
 			title: '账单详情'
 		},
-		component: () => import(/* webpackChunkName: "QueryWaterBillDetail" */ 'views/queryWaterBillDetail/queryWaterBillDetail')
+		component: () => import(/* webpackChunkName: "QueryWaterBillDetail" */ 'views/payment/views/queryWaterBillDetail/queryWaterBillDetail')
 	}
+	/* ========== 水费查缴结束 ========== */
 ];
 
 const router = new VueRouter({
