@@ -1,11 +1,11 @@
 <template>
 	<div id="queryWaterBill" class="pageContainer">
-		<div class="titleWrapper">
-			<p>
+		<Navbar>
+			<p class="desc">
 				尊敬的用户 <br />
 				请输入您的信息进行查询
 			</p>
-		</div>
+		</Navbar>
 		<div class="container">
 			<van-form @submit="submit">
 				<div class="formWrapper">

@@ -1,14 +1,9 @@
 #payment {
-    .titleWrapper {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        height: 100%;
+    .desc {
+        padding-left: 10px;
+        line-height: 1.5;
+        color: #ffffff;
         font-size: 14px;
-        p {
-            line-height: 1.5;
-            color: #ffffff;
-        }
     }
     .routers {
         line-height: 1.5;

@@ -103,6 +103,7 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
+	document.documentElement.scrollTop = 0;
 	document.title = to.meta.title;
 	next();
 });

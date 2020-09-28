@@ -1,6 +1,6 @@
 <template>
 	<div id="electronicInvoice" class="pageContainer">
-		<div class="titleWrapper">
+		<Navbar>
 			<p class="info">户名：袁敏棠</p>
 			<div class="info">
 				户号：
@@ -10,7 +10,7 @@
 				</div>
 			</div>
 			<p class="info">地址：亨尾大街东区软件园3层314</p>
-		</div>
+		</Navbar>
 		<div class="yearPickerWrapper">
 			<YearPicker />
 		</div>

@@ -33,16 +33,10 @@
 
 <script>
 import Banner from './components/Banner';
-import ripplePng from 'images/ripple.png';
 export default {
 	name: 'Home',
 	components: {
 		Banner
-	},
-	data() {
-		return {
-			ripplePng
-		};
 	}
 };
 </script>

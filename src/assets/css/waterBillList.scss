@@ -1,20 +1,12 @@
 #waterBillList {
-    .titleWrapper {
-		padding: 0 30px;
+    .info {
+		padding-left: 10px;
 		display: flex;
-		flex-direction: column;
-		width: 100%;
-		min-height: 20vw;
-		font-size: 14px;
-		background-image: linear-gradient(to right, #4199b4, #1d7eb8);
-		.info {
-			display: flex;
-			align-items: center;
-			line-height: 1.5;
-			color: #ffffff;
-			.iconWrapper {
-				margin-left: 5px;
-			}
+		align-items: center;
+		line-height: 1.5;
+		color: #ffffff;
+		.iconWrapper {
+			margin-left: 5px;
 		}
 	}
 	.yearPickerWrapper {

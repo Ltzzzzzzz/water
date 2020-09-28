@@ -1,11 +1,11 @@
 <template>
 	<div id="queryWaterBillDetail" class="pageContainer">
-		<div class="titleWrapper">
-			<p>
+		<Navbar>
+			<p class="desc">
 				尊敬的用户 <br />
 				以下为您的账单详情面板
 			</p>
-		</div>
+		</Navbar>
 		<div class="container">
 			<div class="infoWrapper">
 				<van-cell-group>
@@ -38,9 +38,9 @@
 			<div class="infoWrapper">
 				<div ref="chart" id="chart"></div>
 			</div>
-		</div>
-		<div class="submitBtn">
-			<van-button block round type="primary" text="缴费" />
+			<div class="submitBtn">
+				<van-button block type="primary" text="缴费" />
+			</div>
 		</div>
 	</div>
 </template>

@@ -1,11 +1,11 @@
 <template>
 	<div id="user" class="pageContainer">
-		<div class="titleWrapper">
-			<p>
+		<Navbar>
+			<p class="desc">
 				尊敬的用户 <br />
 				以下为您的客户详情列表
 			</p>
-		</div>
+		</Navbar>
 		<div class="container">
 			<div class="tipWrapper" v-if="!list.length">
 				<van-icon name="bulb-o" size="40" color="#ee0a24" />
