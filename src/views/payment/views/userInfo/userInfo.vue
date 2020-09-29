@@ -41,5 +41,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'css/userInfo.scss';
+.infoWrapper {
+	margin-bottom: 20px;
+	border-radius: 8px;
+	overflow: hidden;
+}
 </style>

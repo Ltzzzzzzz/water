@@ -43,5 +43,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'css/login.scss';
+#login {
+	.formWrapper {
+		border-radius: 8px;
+		overflow: hidden;
+	}
+	.button {
+		margin: 20px;
+	}
+}
 </style>

@@ -19,13 +19,12 @@
 
 <script>
 import Process from './src/Process';
-import Table from './src/Table';
 export default {
 	name: 'ExChangeModel',
 	props: ['showData'],
 	components: {
 		Process,
-		Table
+		Table: () => import(/* webpackChunkName: "ExChangeModelTable" */ './src/Table')
 	}
 };
 </script>

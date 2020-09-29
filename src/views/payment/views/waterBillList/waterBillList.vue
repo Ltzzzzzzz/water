@@ -15,12 +15,7 @@
 			<YearPicker />
 		</div>
 		<div class="container">
-			<div class="tip" v-if="!list.length">
-				<div class="iconWrapper">
-					<van-icon size="40" color="#707070" name="question-o" />
-					<p class="desc">暂无数据</p>
-				</div>
-			</div>
+			<div class="tip" v-if="!list.length"><van-empty description="暂无数据" /></div>
 			<div class="waterBillItemList" v-else>
 				<WaterBillItem v-for="item in list" :key="item" />
 			</div>
@@ -31,11 +26,13 @@
 <script>
 import YearPicker from 'components/part/YearPicker';
 import WaterBillItem from './components/WaterBillItem';
+import Picker from 'components/part/Picker';
 export default {
 	name: 'waterBillList',
 	components: {
 		YearPicker,
-		WaterBillItem
+		WaterBillItem,
+		Picker
 	},
 	data() {
 		return {

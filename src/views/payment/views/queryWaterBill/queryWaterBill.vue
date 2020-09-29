@@ -37,10 +37,12 @@
 
 <script>
 import QueryWaterBillItem from './components/QueryWaterBillItem';
+import DatePicker from 'components/part/DatePicker';
 export default {
 	name: 'queryWaterBill',
 	components: {
-		QueryWaterBillItem
+		QueryWaterBillItem,
+		DatePicker
 	},
 	data() {
 		return {

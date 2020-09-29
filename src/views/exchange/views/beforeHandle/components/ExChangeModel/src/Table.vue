@@ -45,8 +45,10 @@ export default {
 		}
 	}
 	.dataTemplate {
-		color: #333333;
 		margin-top: 10px;
+		border-radius: 8px;
+		color: #333333;
+		overflow: hidden;
 		h4 {
 			padding: 14px 10px;
 			background-color: #eeeef0;

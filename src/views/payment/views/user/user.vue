@@ -10,7 +10,7 @@
 			<div class="tipWrapper" v-if="!list.length">
 				<van-icon name="bulb-o" size="40" color="#ee0a24" />
 				<h4>您还没有绑定，请绑定后查看</h4>
-				<van-button round block size="small" type="info" text="登陆" to="/login"></van-button>
+				<van-button round block size="small" type="info" text="绑定" to="/login"></van-button>
 			</div>
 			<div class="userList" v-else>
 				<div class="userListWrapper">

@@ -100,41 +100,59 @@ const routes = [
 		path: '/transfer',
 		name: 'transfer',
 		meta: {
-			title: '过户'
+			title: '过户',
+			desc: '过户是指在用水地址、口径、性质不变，且无欠费的情况下，需要更改客户名称的业务',
+			dataDownload: true
 		},
-		component: () => import(/* webpackChunkName: "transfer" */ 'views/exchange/views/transfer/transfer')
+		component: () => import(/* webpackChunkName: "beforeHandle" */ 'views/exchange/views/beforeHandle/beforeHandle')
 	},
 	{
 		path: '/changeBankCard',
 		name: 'changeBankCard',
 		meta: {
-			title: '变更银行卡'
+			title: '变更银行卡',
+			desc: '如您需要变更代扣水费的银行信息，可申请此项业务',
+			dataDownload: true
 		},
-		component: () => import(/* webpackChunkName: "bankCard" */ 'views/exchange/views/bankCard/bankCard')
+		component: () => import(/* webpackChunkName: "beforeHandle" */ 'views/exchange/views/beforeHandle/beforeHandle')
 	},
 	{
 		path: '/changeBillInformation',
 		name: 'changeBillInformation',
 		meta: {
-			title: '变更开票信息'
+			title: '变更开票信息',
+			desc: '如您需要变更开票资料信息，可申请此项业务',
+			dataDownload: true
 		},
-		component: () => import(/* webpackChunkName: "billInformation" */ 'views/exchange/views/billInformation/billInformation')
+		component: () => import(/* webpackChunkName: "beforeHandle" */ 'views/exchange/views/beforeHandle/beforeHandle')
 	},
 	{
 		path: '/changeContact',
 		name: 'changeContact',
 		meta: {
-			title: '变更联系方式'
+			title: '变更联系方式',
+			desc: '如您需要变更联系人、手机号码等信息，可申请此项业务',
+			dataDownload: false
 		},
-		component: () => import(/* webpackChunkName: "contact" */ 'views/exchange/views/contact/contact')
+		component: () => import(/* webpackChunkName: "beforeHandle" */ 'views/exchange/views/beforeHandle/beforeHandle')
 	},
 	{
 		path: '/changeNatureOfWater',
 		name: 'changeNatureOfWater',
 		meta: {
-			title: '变更用水性质'
+			title: '变更用水性质',
+			desc: '如您的用水性质发生变化时，可申请此项业务',
+			dataDownload: true
 		},
-		component: () => import(/* webpackChunkName: "natureOfWater" */ 'views/exchange/views/natureOfWater/natureOfWater')
+		component: () => import(/* webpackChunkName: "beforeHandle" */ 'views/exchange/views/beforeHandle/beforeHandle')
+	},
+	{
+		path: '/exchangeForm',
+		name: 'exchangeForm',
+		meta: {
+			title: '提交办理'
+		},
+		component: () => import(/* webpackChunkName: "exchangeForm" */ 'views/exchange/views/exchangeForm/exchangeForm')
 	}
 	/* ========== 信息变更结束 ========== */
 ];

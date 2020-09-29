@@ -43,5 +43,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'css/register.scss';
+#register {
+	.formWrapper {
+		border-radius: 8px;
+		overflow: hidden;
+	}
+	.button {
+		margin: 20px;
+	}
+}
 </style>
