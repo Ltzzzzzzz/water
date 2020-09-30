@@ -1,7 +1,7 @@
 <template>
-	<div class="picker" :class="{ custom: !custom }">
+	<div class="picker" :class="{ formItem: !custom, required }">
 		<p v-if="custom" @click="showPicker = true">{{ value }}</p>
-		<van-field v-else readonly clickable :label="placeholder" :value="value" :name="name" :placeholder="`选择${placeholder}`" @click="showPicker = true" />
+		<van-field v-else readonly clickable :label="placeholder" :value="value" :name="name" :placeholder="`选择${placeholder}`" @click="showPicker = true" :rules="rules" />
 		<van-popup v-model="showPicker" round position="bottom">
 			<van-picker show-toolbar :title="placeholder ? placeholder : title" v-model="currentItem" :columns="columns" @confirm="onConfirm" />
 		</van-popup>
@@ -11,7 +11,7 @@
 <script>
 export default {
 	name: 'Picker',
-	props: ['value', 'columns', 'title', 'custom', 'placeholder', 'name'],
+	props: ['value', 'columns', 'title', 'custom', 'placeholder', 'name', 'required', 'rules'],
 	data() {
 		return {
 			currentItem: '',
@@ -31,7 +31,16 @@ export default {
 <style lang="scss">
 .picker {
 	position: relative;
-	&.custom:after {
+	&.required:before {
+		content: '*';
+		position: absolute;
+		top: 14px !important;
+		left: 10px;
+		font-size: 10px;
+		color: #ee0a24;
+		z-index: 1;
+	}
+	&.formItem:after {
 		position: absolute;
 		box-sizing: border-box;
 		content: '';

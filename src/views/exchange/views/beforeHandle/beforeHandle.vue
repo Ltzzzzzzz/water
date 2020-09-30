@@ -49,8 +49,8 @@ export default {
 			this.$router.push({
 				name: 'exchangeForm',
 				params: {
-					formName: this.$route.meta.title,
-					componentName: this.$route.name
+					formTitle: this.$route.meta.title,
+					formName: this.$route.name
 				}
 			});
 		}

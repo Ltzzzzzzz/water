@@ -1,10 +1,10 @@
 <template>
 	<div id="exchangeForm" class="pageContainer">
 		<Navbar>
-			<h2>{{ $route.params.formName }}</h2>
+			<h2>{{ $route.params.formTitle }}</h2>
 		</Navbar>
 		<div class="container">
-			<component :is="$route.params.componentName" />
+			<component :is="$route.params.formName" />
 		</div>
 	</div>
 </template>
@@ -13,12 +13,12 @@
 export default {
 	name: 'exchangeForm',
 	components: {
-		transfer: () => import(/* webpackChunkName: "Transfer" */ './components/Transfer')
+		transfer: () => import(/* webpackChunkName: "transfer" */ './components/Transfer')
 	},
 	beforeRouteEnter(to, from, next) {
 		next(vm => {
 			// 不是来自办理业务路由页面，直接返回exchange
-			if (!vm.$route.params.formName) {
+			if (!vm.$route.params.formTitle) {
 				vm.$router.replace('/exchange');
 			}
 		});
