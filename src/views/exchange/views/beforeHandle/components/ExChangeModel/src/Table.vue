@@ -5,16 +5,18 @@
 			<span class="link" @click="showTemplate = true">《业务受理表》</span>
 			，加盖公章后上传。
 		</div>
-		<div v-if="showTemplate" class="dataTemplate">
-			<h4>资料模版</h4>
-			<div class="template">
-				<p>《受理表》</p>
-				<div class="buttonWrapper">
-					<van-button size="mini" type="info" text="样表下载" />
-					<van-button size="mini" type="primary" text="表单下载" />
+		<transition name="van-fade">
+			<div v-if="showTemplate" class="dataTemplate">
+				<h4>资料模版</h4>
+				<div class="template">
+					<p>《受理表》</p>
+					<div class="buttonWrapper">
+						<van-button size="mini" type="info" text="样表下载" />
+						<van-button size="mini" type="primary" text="表单下载" />
+					</div>
 				</div>
 			</div>
-		</div>
+		</transition>
 	</div>
 </template>
 

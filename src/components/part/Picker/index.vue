@@ -1,5 +1,5 @@
 <template>
-	<div class="picker">
+	<div class="picker" :class="{ custom: !custom }">
 		<p v-if="custom" @click="showPicker = true">{{ value }}</p>
 		<van-field v-else readonly clickable :label="placeholder" :value="value" :name="name" :placeholder="`选择${placeholder}`" @click="showPicker = true" />
 		<van-popup v-model="showPicker" round position="bottom">
@@ -28,4 +28,19 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.picker {
+	position: relative;
+	&.custom:after {
+		position: absolute;
+		box-sizing: border-box;
+		content: '';
+		pointer-events: none;
+		right: 16px;
+		bottom: 0;
+		left: 16px;
+		border-bottom: 1px solid #ebedf0;
+		transform: scaleY(0.5);
+	}
+}
+</style>

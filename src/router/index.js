@@ -107,8 +107,8 @@ const routes = [
 		component: () => import(/* webpackChunkName: "beforeHandle" */ 'views/exchange/views/beforeHandle/beforeHandle')
 	},
 	{
-		path: '/changeBankCard',
-		name: 'changeBankCard',
+		path: '/alterBankCard',
+		name: 'bankCard',
 		meta: {
 			title: '变更银行卡',
 			desc: '如您需要变更代扣水费的银行信息，可申请此项业务',
@@ -117,8 +117,8 @@ const routes = [
 		component: () => import(/* webpackChunkName: "beforeHandle" */ 'views/exchange/views/beforeHandle/beforeHandle')
 	},
 	{
-		path: '/changeBillInformation',
-		name: 'changeBillInformation',
+		path: '/alterBillInformation',
+		name: 'billInformation',
 		meta: {
 			title: '变更开票信息',
 			desc: '如您需要变更开票资料信息，可申请此项业务',
@@ -127,8 +127,8 @@ const routes = [
 		component: () => import(/* webpackChunkName: "beforeHandle" */ 'views/exchange/views/beforeHandle/beforeHandle')
 	},
 	{
-		path: '/changeContact',
-		name: 'changeContact',
+		path: '/alterContact',
+		name: 'contact',
 		meta: {
 			title: '变更联系方式',
 			desc: '如您需要变更联系人、手机号码等信息，可申请此项业务',
@@ -137,8 +137,8 @@ const routes = [
 		component: () => import(/* webpackChunkName: "beforeHandle" */ 'views/exchange/views/beforeHandle/beforeHandle')
 	},
 	{
-		path: '/changeNatureOfWater',
-		name: 'changeNatureOfWater',
+		path: '/alterNatureOfWater',
+		name: 'natureOfWater',
 		meta: {
 			title: '变更用水性质',
 			desc: '如您的用水性质发生变化时，可申请此项业务',
@@ -150,7 +150,8 @@ const routes = [
 		path: '/exchangeForm',
 		name: 'exchangeForm',
 		meta: {
-			title: '提交办理'
+			title: '提交办理',
+			keepAgree: true
 		},
 		component: () => import(/* webpackChunkName: "exchangeForm" */ 'views/exchange/views/exchangeForm/exchangeForm')
 	}

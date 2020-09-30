@@ -11,10 +11,10 @@
 			<div class="routers">
 				<van-grid clickable :column-num="3">
 					<van-grid-item icon="friends-o" to="/transfer" text="过户" />
-					<van-grid-item icon="credit-pay" to="/changeBankCard" text="变更银行卡" />
-					<van-grid-item icon="records" to="/changeBillInformation" text="变更开票信息" />
-					<van-grid-item icon="phone-o" to="/changeContact" text="变更联系方式" />
-					<van-grid-item icon="question-o" to="/changeNatureOfWater" text="变更用水性质" />
+					<van-grid-item icon="credit-pay" to="/alterBankCard" text="变更银行卡" />
+					<van-grid-item icon="records" to="/alterBillInformation" text="变更开票信息" />
+					<van-grid-item icon="phone-o" to="/alterContact" text="变更联系方式" />
+					<van-grid-item icon="question-o" to="/alterNatureOfWater" text="变更用水性质" />
 				</van-grid>
 			</div>
 		</div>

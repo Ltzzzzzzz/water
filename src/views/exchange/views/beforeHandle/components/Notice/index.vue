@@ -9,7 +9,7 @@
 				<a class="link" href="#">《供用水服务协议》</a>
 			</div>
 			<div class="agreeWrapper" @click="hanlderClick">
-				<div class="iconWrapper" :class="{ isCheck: checked }">
+				<div class="iconWrapper" :class="{ isCheck: value }">
 					<van-icon size="19" color="#ffffff" name="success" />
 				</div>
 				<p>我已阅读业务须知与合同条款，并同意</p>
@@ -23,15 +23,9 @@
 export default {
 	name: 'Notice',
 	props: ['value'],
-	data() {
-		return {
-			checked: false
-		};
-	},
 	methods: {
 		hanlderClick() {
-			this.checked = !this.checked;
-			this.$emit('input', this.checked);
+			this.$emit('input', !this.value);
 		}
 	}
 };

@@ -29,13 +29,28 @@ export default {
 			agree: false
 		};
 	},
+	beforeRouteEnter(to, from, next) {
+		if (!from.meta.keepAgree) {
+			next(vm => {
+				vm.agree = false;
+			});
+		} else {
+			next(vm => {
+				vm.$router.replace('/exchange');
+			});
+		}
+	},
 	methods: {
 		goExchangeForm() {
+			if (!this.agree) {
+				this.$toast.fail('请阅读业务须知与合同条款并同意');
+				return;
+			}
 			this.$router.push({
 				name: 'exchangeForm',
 				params: {
 					formName: this.$route.meta.title,
-					formComponent: this.$route.name
+					componentName: this.$route.name
 				}
 			});
 		}
