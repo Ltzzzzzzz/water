@@ -13,7 +13,11 @@
 export default {
 	name: 'exchangeForm',
 	components: {
-		transfer: () => import(/* webpackChunkName: "transfer" */ './components/Transfer')
+		transfer: () => import(/* webpackChunkName: "transfer" */ './components/Transfer'),
+		bankCard: () => import(/* webpackChunkName: "bankCard" */ './components/BankCard'),
+		billInformation: () => import(/* webpackChunkName: "billInformation" */ './components/BillInformation'),
+		contact: () => import(/* webpackChunkName: "contact" */ './components/Contact'),
+		natureOfWater: () => import(/* webpackChunkName: "natureOfWater" */ './components/NatureOfWater')
 	},
 	beforeRouteEnter(to, from, next) {
 		next(vm => {

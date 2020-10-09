@@ -1,0 +1,35 @@
+.exchangeForm {
+    .infoWrapper {
+		margin-bottom: 10px;
+		border-radius: 8px;
+		overflow: hidden;
+		.title {
+			padding: 10px;
+			background-color: #eeeef0;
+			text-align: center;
+			font-weight: normal;
+		}
+		.phoneCode {
+			display: flex;
+			align-items: center;
+			.getCode {
+				margin-left: 10px;
+				flex: 0 0 100px;
+				background-color: #ffffff;
+			}
+		}
+	}
+	.required {
+		&:before {
+			content: '*';
+			position: absolute;
+			top: 8px;
+			left: 10px;
+			font-size: 10px;
+			color: #ee0a24;
+		}
+	}
+	.submit {
+		margin: 16px 0;
+	}
+}

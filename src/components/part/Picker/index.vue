@@ -22,6 +22,7 @@ export default {
 		onConfirm(v) {
 			this.currentItem = v;
 			this.$emit('input', this.currentItem);
+			this.$emit('change');
 			this.showPicker = false;
 		}
 	}

@@ -5,7 +5,7 @@
 		<div class="vanWrapper">
 			<van-field :name="name" :rules="rules">
 				<template #input>
-					<van-uploader v-model="fileList" max-count="1" :after-read="afterRead">
+					<van-uploader v-model="fileList" :max-count="maxcount ? maxcount : 1">
 						<div class="uploadWrapper">
 							<div class="iconWrapper" v-if="!image">
 								<van-icon size="40" color="#dcdee0" name="photograph" />
@@ -24,16 +24,11 @@
 <script>
 export default {
 	name: 'PhotoUpload',
-	props: ['value', 'required', 'name', 'label', 'placeholder', 'rules', 'image'],
+	props: ['required', 'name', 'label', 'placeholder', 'rules', 'image', 'maxcount'],
 	data() {
 		return {
 			fileList: []
 		};
-	},
-	methods: {
-		afterRead(file) {
-			this.$emit('input', file);
-		}
 	}
 };
 </script>
@@ -79,13 +74,14 @@ export default {
 		justify-content: center;
 		/deep/.van-uploader {
 			width: 100%;
-			/deep/.van-uploader__input-wrapper {
+			.van-uploader__input-wrapper {
 				width: 100%;
 				.uploadWrapper {
 					position: relative;
 					width: 100%;
 					height: 0;
 					padding-bottom: 50%;
+					margin-bottom: 10px;
 					border-radius: 8px;
 					background-color: #f7f8fa;
 					.iconWrapper {
@@ -107,17 +103,18 @@ export default {
 					}
 				}
 			}
-			/deep/.van-uploader__preview {
+			.van-uploader__preview {
 				margin: 0;
+				margin-bottom: 10px;
 				width: 100%;
 				border-radius: 8px;
 				overflow: hidden;
-				/deep/.van-uploader__preview-image {
+				.van-uploader__preview-image {
 					position: relative;
 					width: 100%;
 					height: 0;
 					padding-bottom: 50%;
-					/deep/.van-image__img {
+					.van-image__img {
 						position: absolute;
 						top: 0;
 						right: 0;
