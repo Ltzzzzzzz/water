@@ -46,6 +46,7 @@
 					label="请添加《身份证》(正面)"
 					placeholder="个人用户请上传户主身份证，单位用户请上传法人身份证"
 					:image="positive"
+					:maxcount="1"
 					:required="true"
 					:rules="[{ required: true, message: '请添加身份证(正面)的照片' }]"
 				/>
@@ -54,10 +55,11 @@
 					label="请添加《身份证》(反面)"
 					placeholder="个人用户请上传户主身份证，单位用户请上传法人身份证"
 					:image="back"
+					:maxcount="1"
 					:required="true"
 					:rules="[{ required: true, message: '请添加身份证(反面)的照片' }]"
 				/>
-				<PhotoUpload name="holdIdCard" label="请添加《手持身份证照》" :image="photo" :required="true" :rules="[{ required: true, message: '请添加手持身份证的照片' }]" />
+				<PhotoUpload name="holdIdCard" label="请添加《手持身份证照》" :image="photo" :maxcount="1" :required="true" :rules="[{ required: true, message: '请添加手持身份证的照片' }]" />
 				<PhotoUpload name="businessLicense" label="请添加《营业执照》" placeholder="单位用户请提供原件照片" />
 				<PhotoUpload name="businessForm" label="请添加《业务受理表》" placeholder="单位用户请上传加盖公章的业务受理表" />
 				<PhotoUpload name="weaterUseSite" label="请添加《用水现场照》" />

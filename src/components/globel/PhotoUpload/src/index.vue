@@ -5,7 +5,7 @@
 		<div class="vanWrapper">
 			<van-field :name="name" :rules="rules">
 				<template #input>
-					<van-uploader v-model="fileList" :max-count="maxcount ? maxcount : 1">
+					<van-uploader v-model="fileList" :max-count="maxcount ? maxcount : 6">
 						<div class="uploadWrapper">
 							<div class="iconWrapper" v-if="!image">
 								<van-icon size="40" color="#dcdee0" name="photograph" />

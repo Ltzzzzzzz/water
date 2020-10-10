@@ -1,15 +1,13 @@
 <template>
 	<div class="process">
-		<div class="step">填报办理信息</div>
-		<div class="step">办理信息审核</div>
-		<div class="step">业务办理</div>
-		<div class="step">服务评价</div>
+		<div class="step" v-for="(step, i) in steps" :key="i">{{ step }}</div>
 	</div>
 </template>
 
 <script>
 export default {
-	name: 'Process'
+	name: 'Process',
+	props: ['steps']
 };
 </script>
 

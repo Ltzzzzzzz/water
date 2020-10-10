@@ -36,7 +36,7 @@ export default {
 			});
 		} else {
 			next(vm => {
-				vm.$router.replace('/exchange');
+				vm.$router.replace(vm.$route.meta.replacePath);
 			});
 		}
 	},
@@ -46,8 +46,8 @@ export default {
 				this.$toast.fail('请阅读业务须知与合同条款并同意');
 				return;
 			}
-			this.$router.push({
-				name: 'exchangeForm',
+			this.$router.replace({
+				name: 'forms',
 				params: {
 					formTitle: this.$route.meta.title,
 					formName: this.$route.name

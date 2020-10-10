@@ -2,7 +2,7 @@
 	<div class="exChangeModel">
 		<PartTitle color="#ee0a24" title="办理流程" />
 		<div class="container">
-			<Process />
+			<Process :steps="$route.meta.steps" />
 		</div>
 		<PartTitle color="#ee0a24" title="业务须知" />
 		<div class="container">

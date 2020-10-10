@@ -16,7 +16,11 @@
 						<h4>信息变更</h4>
 						<p>过户、修改水卡信息</p>
 					</van-grid-item>
-					<van-grid-item icon="question-o" text="未知模块" />
+					<van-grid-item to="/waterApplication">
+						<van-icon name="cluster-o" size="28" />
+						<h4>用水申请</h4>
+						<p>用水报装、临时用水业务</p>
+					</van-grid-item>
 					<van-grid-item icon="question-o" text="未知模块" />
 					<van-grid-item icon="question-o" text="未知模块" />
 					<van-grid-item icon="question-o" text="未知模块" />
