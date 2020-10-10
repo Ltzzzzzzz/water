@@ -96,20 +96,12 @@
 </template>
 
 <script>
-import Picker from 'components/part/Picker';
-import PhotoUpload from '../PhotoUpload';
-import Signature from '../Signature';
 import positive from 'images/positive.png';
 import back from 'images/back.png';
 import photo from 'images/photo.png';
 import bankImage from 'images/bank.png';
 export default {
 	name: 'transfer',
-	components: {
-		Picker,
-		PhotoUpload,
-		Signature
-	},
 	data() {
 		return {
 			positive,

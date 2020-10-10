@@ -26,13 +26,11 @@
 <script>
 import YearPicker from 'components/part/YearPicker';
 import WaterBillItem from './components/WaterBillItem';
-import Picker from 'components/part/Picker';
 export default {
 	name: 'waterBillList',
 	components: {
 		YearPicker,
-		WaterBillItem,
-		Picker
+		WaterBillItem
 	},
 	data() {
 		return {

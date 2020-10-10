@@ -26,13 +26,11 @@
 <script>
 import YearPicker from 'components/part/YearPicker';
 import ElectronicInvoiceItem from './components/ElectronicInvoiceItem';
-import Picker from 'components/part/Picker';
 export default {
 	name: 'electronicInvoice',
 	components: {
 		YearPicker,
-		ElectronicInvoiceItem,
-		Picker
+		ElectronicInvoiceItem
 	},
 	data() {
 		return {
