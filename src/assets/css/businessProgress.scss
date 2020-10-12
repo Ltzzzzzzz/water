@@ -1,0 +1,17 @@
+#businessProgress {
+    .infoWrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        .buttonWrapper {
+            button {
+                padding: 10px 14px;
+                border: 0;
+                background-color: #1a74ab;
+                font-size: 14px;
+                color: #ffffff;
+                border-radius: 8px;
+            }
+        }
+    }
+}

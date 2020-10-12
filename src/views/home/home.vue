@@ -21,7 +21,11 @@
 						<h4>用水申请</h4>
 						<p>用水报装、临时用水业务</p>
 					</van-grid-item>
-					<van-grid-item icon="question-o" text="未知模块" />
+					<van-grid-item to="/progressInquire">
+						<van-icon name="underway-o" size="28" />
+						<h4>进度查询</h4>
+						<p>进度查询、公共信息等业务</p>
+					</van-grid-item>
 					<van-grid-item icon="question-o" text="未知模块" />
 					<van-grid-item icon="question-o" text="未知模块" />
 					<van-grid-item icon="question-o" text="未知模块" />
