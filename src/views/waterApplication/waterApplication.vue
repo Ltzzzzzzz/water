@@ -27,5 +27,3 @@ export default {
 	name: 'waterApplication'
 };
 </script>
-
-<style></style>

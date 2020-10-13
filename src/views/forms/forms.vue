@@ -22,13 +22,20 @@ export default {
 		/*========== 变更信息表单结束 ==========*/
 
 		/*========== 用水申请表单开始 ==========*/
-		personalNew: () => import(/* webpackChunkName: "personalNew" */ './components/waterApplication/PersonalNew'), // 个人新装表
-		personalSnap: () => import(/* webpackChunkName: "personalSnap" */ './components/waterApplication/PersonalSnap'), // 个人临时用水
-		unitNew: () => import(/* webpackChunkName: "unitNew" */ './components/waterApplication/UnitNew'), // 单位新装表
-		unitSnap: () => import(/* webpackChunkName: "unitSnap" */ './components/waterApplication/UnitSnap'), // 单位临时用水
-		arrearsReinstall: () => import(/* webpackChunkName: "arrearsReinstall" */ './components/waterApplication/ArrearsReinstall'), // 欠费停水复装
-		pauseReinstall: () => import(/* webpackChunkName: "pauseReinstall" */ './components/waterApplication/PauseReinstall') // 暂停用水复装
+		personalNew: () => import(/* webpackChunkName: "personalNew" */ './components/waterApplicationForm/PersonalNew'), // 个人新装表
+		personalSnap: () => import(/* webpackChunkName: "personalSnap" */ './components/waterApplicationForm/PersonalSnap'), // 个人临时用水
+		unitNew: () => import(/* webpackChunkName: "unitNew" */ './components/waterApplicationForm/UnitNew'), // 单位新装表
+		unitSnap: () => import(/* webpackChunkName: "unitSnap" */ './components/waterApplicationForm/UnitSnap'), // 单位临时用水
+		arrearsReinstall: () => import(/* webpackChunkName: "arrearsReinstall" */ './components/waterApplicationForm/ArrearsReinstall'), // 欠费停水复装
+		pauseReinstall: () => import(/* webpackChunkName: "pauseReinstall" */ './components/waterApplicationForm/PauseReinstall'), // 暂停用水复装
 		/*========== 用水申请表单结束 ==========*/
+
+		/*========== 其他业务表单开始 ==========*/
+		checkWaterMeter: () => import(/* webpackChunkName: "transfer" */ './components/othersForm/CheckWaterMeter'), // 申请水表检定
+		checkWaterQuality: () => import(/* webpackChunkName: "bankCard" */ './components/othersForm/CheckWaterQuality'), // 申请水质检验
+		report: () => import(/* webpackChunkName: "billInformation" */ './components/othersForm/Report'), // 报漏报修
+		suggest: () => import(/* webpackChunkName: "contact" */ './components/othersForm/Suggest') // 投诉建议
+		/*========== 其他业务表单结束 ==========*/
 	},
 	beforeRouteEnter(to, from, next) {
 		next(vm => {
@@ -37,6 +44,13 @@ export default {
 				vm.$router.replace('/');
 			}
 		});
+	},
+	beforeRouteLeave(to, from, next) {
+		this.$destroy();
+		next();
+	},
+	mounted() {
+		document.documentElement.scrollTop = 0;
 	}
 };
 </script>

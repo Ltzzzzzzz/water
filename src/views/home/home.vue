@@ -26,11 +26,11 @@
 						<h4>进度查询</h4>
 						<p>进度查询、公共信息等业务</p>
 					</van-grid-item>
-					<van-grid-item icon="question-o" text="未知模块" />
-					<van-grid-item icon="question-o" text="未知模块" />
-					<van-grid-item icon="question-o" text="未知模块" />
-					<van-grid-item icon="question-o" text="未知模块" />
-					<van-grid-item icon="question-o" text="未知模块" />
+					<van-grid-item to="/others">
+						<van-icon name="other-pay" size="28" />
+						<h4>其他业务</h4>
+						<p>投诉、验表、水质检验</p>
+					</van-grid-item>
 				</van-grid>
 			</div>
 		</div>

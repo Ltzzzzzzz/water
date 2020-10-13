@@ -7,7 +7,7 @@
 		</Navbar>
 		<div class="container">
 			<ExChangeModel :showData="$route.meta.dataDownload" />
-			<Notice v-model="agree" />
+			<Notice v-model="agree" v-if="!$route.meta.direct" />
 			<div class="buttonWrapper">
 				<van-button block type="info" text="办理" @click="goExchangeForm" />
 			</div>
@@ -42,7 +42,7 @@ export default {
 	},
 	methods: {
 		goExchangeForm() {
-			if (!this.agree) {
+			if (!this.agree && !this.$route.meta.direct) {
 				this.$toast.fail('请阅读业务须知与合同条款并同意');
 				return;
 			}

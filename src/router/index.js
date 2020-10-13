@@ -4,6 +4,7 @@ import payment from './payment'; // 水费查缴
 import progressInquire from './progressInquire'; // 进度查询
 import exchange from './exchange'; // 信息变更
 import waterApplication from './waterApplication'; // 用水申请
+import others from './others'; // 其他业务
 
 if (!window.VueRouter) Vue.use(VueRouter);
 // 基本路由
@@ -49,7 +50,7 @@ let routes = [
 ];
 
 // 路由表连接
-routes = routes.concat(payment, progressInquire, exchange, waterApplication);
+routes = routes.concat(payment, progressInquire, exchange, waterApplication, others);
 
 const router = new VueRouter({
 	mode: 'history',
