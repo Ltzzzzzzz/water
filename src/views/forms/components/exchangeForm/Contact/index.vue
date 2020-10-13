@@ -106,12 +106,8 @@ export default {
 		};
 	},
 	methods: {
-		onSubmit(v) {
-			console.log(v);
-		},
-		accountNumberChange() {
-			console.log(1);
-		},
+		onSubmit(v) {},
+		accountNumberChange() {},
 		emailReg(v) {
 			if (v) {
 				return /^([a-zA-Z\d])(\w|-)+@[a-zA-Z\d]+\.[a-zA-Z]{2,4}$/.test(v);

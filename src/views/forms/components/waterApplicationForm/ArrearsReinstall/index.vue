@@ -53,9 +53,7 @@ export default {
 		};
 	},
 	methods: {
-		onSubmit(v) {
-			console.log(v);
-		},
+		onSubmit(v) {},
 		accountNumberChange() {},
 		telReg(v) {
 			if (v) {

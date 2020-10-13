@@ -60,12 +60,8 @@ export default {
 		};
 	},
 	methods: {
-		onSubmit(v) {
-			console.log(v);
-		},
-		accountNumberChange() {
-			console.log(1);
-		},
+		onSubmit(v) {},
+		accountNumberChange() {},
 		telReg(v) {
 			if (v) {
 				return /^(\(\d{3,4}\)|\d{3,4}-|\s)?\d{7,14}$/.test(v) || /^1[3456789]\d{9}$/.test(v);

@@ -62,9 +62,7 @@ export default {
 		}
 	},
 	methods: {
-		hanlderChange() {
-			console.log(1);
-		},
+		hanlderChange() {},
 		onLoad() {
 			setTimeout(() => {
 				if (this.refreshing) {
