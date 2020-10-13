@@ -18,7 +18,8 @@
 					</div>
 				</div>
 			</van-form>
-			<div class="billList" v-if="showList">
+			<div class="tip" v-if="!list.length"><van-empty /></div>
+			<div class="billList" v-else>
 				<div class="ctrlWrapper">
 					<div class="switchWrapper" @click="switchCheck = !switchCheck">
 						<van-switch size="16" v-model="switchCheck" active-color="#07c160" inactive-color="#ee0a24" @click.stop /><span>全选</span>
@@ -51,13 +52,12 @@ export default {
 			switchCheck: true,
 			list: [],
 			loading: false,
-			finished: true,
-			showList: false,
+			finished: false,
 			/* ==========组件控制 end========== */
 
 			/* ==========表单参数绑定 start========== */
-			accountNumber: '21',
-			accountName: '12',
+			accountNumber: '',
+			accountName: '',
 			startDate: '',
 			endDate: '',
 			rules: {
@@ -71,33 +71,48 @@ export default {
 	// 组件内路由钩子
 	beforeRouteLeave(to, from, next) {
 		// 进入详情页时候，缓存该路由
-		const keepAlive = to.params.keepAlive ? to.params.keepAlive : '';
+		const keepAlive = to.meta.keepAlive ? to.meta.keepAlive : '';
+		if (!keepAlive) this.$destroy(); // 移除缓存
 		this.$store.commit('globel/setKeepAlive', keepAlive);
 		next();
 	},
 	methods: {
 		submit(v) {
-			this.finished = false;
-			this.showList = true;
+			if (this.list.length) {
+				this.list = [];
+				this.finished = false;
+			}
+			for (let i = 1; i <= 10; i++) {
+				const obj = {
+					id: i,
+					totalPrice: Math.round(Math.random() * 50 * 3 * 100) / 100,
+					waterVolume: Math.floor(Math.random() * 100),
+					lastTimeVolume: Math.ceil(this.lastTimeVolume + (this.list[this.list.length - 1] ? this.list[this.list.length - 1].waterVolume : 0)),
+					finish: i < 9 ? true : false,
+					check: !this.finish,
+					metarDate: `2020-${i < 10 ? '0' + (i - 1) : i - 1}-20至2020-${i < 10 ? '0' + i : i}-19`
+				};
+				this.list.push(obj);
+			}
+			this.list.reverse();
 		},
 		// 上拉加载
 		onLoad() {
 			setTimeout(() => {
 				for (let i = 1; i <= 10; i++) {
 					const obj = {
-						id: i,
+						id: this.list.length + 1,
 						totalPrice: Math.round(Math.random() * 50 * 3 * 100) / 100,
 						waterVolume: Math.floor(Math.random() * 100),
 						lastTimeVolume: Math.ceil(this.lastTimeVolume + (this.list[this.list.length - 1] ? this.list[this.list.length - 1].waterVolume : 0)),
-						finish: i < 9 ? true : false,
+						finish: true,
 						check: !this.finish,
 						metarDate: `2020-${i < 10 ? '0' + (i - 1) : i - 1}-20至2020-${i < 10 ? '0' + i : i}-19`
 					};
 					this.list.push(obj);
 				}
-				this.list.reverse();
 				this.loading = false;
-				if (this.list.length >= 10) {
+				if (this.list.length >= 20) {
 					this.finished = true;
 				}
 			}, 1000);

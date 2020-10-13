@@ -1,5 +1,6 @@
 const getters = {
-	keepAlive: state => state.keepAlive
+	keepAlive: state => state.keepAlive,
+	scrollTop: state => state.scrollTop
 };
 
 export default getters;

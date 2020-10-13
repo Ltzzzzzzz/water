@@ -42,11 +42,12 @@ export default {
 
 <style lang="scss" scoped>
 .waterBillItem {
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	display: flex;
 	background-color: #ffffff;
 	border-radius: 8px;
 	overflow: hidden;
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 	.dateWrapper {
 		padding: 5px 10px;
 		display: flex;

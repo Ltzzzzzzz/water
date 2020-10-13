@@ -49,6 +49,7 @@
 export default {
 	name: 'queryWaterBillDetail',
 	mounted() {
+		document.documentElement.scrollTop = 0;
 		this.drawChart();
 	},
 	methods: {

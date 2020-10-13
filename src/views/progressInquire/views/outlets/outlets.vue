@@ -3,7 +3,7 @@
 		<Navbar>
 			<p class="desc">
 				尊敬的用户<br />
-				以下为各震区的营业网点
+				以下为各镇区的营业网点
 			</p>
 		</Navbar>
 		<div class="container">

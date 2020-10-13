@@ -1,26 +1,104 @@
 <template>
 	<div id="waterPrice" class="pageContainer">
 		<Navbar>
-			<p class="desc">
-				水价信息
-			</p>
+			<div class="infoWrapper">
+				<div class="info">
+					<Picker :custom="true" title="地区" v-model="area" :columns="areas" @change="hanlderChange" />
+					<div class="iconWrapper">
+						<van-icon size="14" name="arrow-down" />
+					</div>
+				</div>
+				<p class="desc">水价标准</p>
+			</div>
 		</Navbar>
 		<div class="container">
 			<div class="tip" v-if="!list.length"><van-empty description="暂无水价信息" /></div>
-			<div class="outletList" v-else></div>
+			<div class="list" v-else>
+				<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
+					<van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
+						<WaterPriceItem v-for="item in list" :key="item.id" :data="item" />
+					</van-list>
+				</van-pull-refresh>
+			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+import WaterPriceItem from './components/WaterPriceItem';
 export default {
 	name: 'waterPrice',
+	components: {
+		WaterPriceItem
+	},
 	data() {
 		return {
-			list: []
+			areas: ['城区', '板芙', '东升', '东风', '阜沙', '港口', '古镇', '民众'],
+			area: '城区',
+			list: [],
+			loading: false,
+			finished: false,
+			refreshing: false
 		};
+	},
+	// 组件内路由钩子
+	beforeRouteLeave(to, from, next) {
+		// 进入详情页时候，缓存该路由
+		const keepAlive = to.meta.keepAlive ? to.meta.keepAlive : '';
+		if (!keepAlive) this.$destroy(); // 移除缓存
+		this.$store.commit('globel/setKeepAlive', keepAlive);
+		next();
+	},
+	mounted() {
+		for (let i = 0; i < 10; i++) {
+			const obj = {
+				id: i,
+				title: '城区水价信息',
+				author: '水价信息',
+				upDate: '2020-10-13'
+			};
+			this.list.push(obj);
+		}
+	},
+	methods: {
+		hanlderChange() {
+			console.log(1);
+		},
+		onLoad() {
+			setTimeout(() => {
+				if (this.refreshing) {
+					this.list = [];
+					this.refreshing = false;
+				}
+
+				for (let i = 0; i < 10; i++) {
+					const obj = {
+						id: this.list.length + 1,
+						title: '城区水价信息',
+						author: '水价信息',
+						upDate: '2020-10-13'
+					};
+					this.list.push(obj);
+				}
+				this.loading = false;
+
+				if (this.list.length >= 20) {
+					this.finished = true;
+				}
+			}, 1000);
+		},
+		onRefresh() {
+			// 清空列表数据
+			this.finished = false;
+			// 重新加载数据
+			// 将 loading 设置为 true，表示处于加载状态
+			this.loading = true;
+			this.onLoad();
+		}
 	}
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+@import 'css/waterPrice.scss';
+</style>

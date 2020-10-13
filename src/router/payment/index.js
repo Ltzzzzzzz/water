@@ -16,6 +16,15 @@ const payment = [
 		component: () => import(/* webpackChunkName: "queryWaterBill" */ 'views/payment/views/queryWaterBill/queryWaterBill')
 	},
 	{
+		path: '/queryWaterBillDetail',
+		name: 'queryWaterBillDetail',
+		meta: {
+			title: '账单详情',
+			keepAlive: 'queryWaterBill'
+		},
+		component: () => import(/* webpackChunkName: "queryWaterBillDetail" */ 'views/payment/views/queryWaterBillDetail/queryWaterBillDetail')
+	},
+	{
 		path: '/user',
 		name: 'user',
 		meta: {
@@ -46,14 +55,6 @@ const payment = [
 			title: '客户详情'
 		},
 		component: () => import(/* webpackChunkName: "userInfo" */ 'views/payment/views/userInfo/userInfo')
-	},
-	{
-		path: '/queryWaterBillDetail',
-		name: 'queryWaterBillDetail',
-		meta: {
-			title: '账单详情'
-		},
-		component: () => import(/* webpackChunkName: "queryWaterBillDetail" */ 'views/payment/views/queryWaterBillDetail/queryWaterBillDetail')
 	}
 ];
 

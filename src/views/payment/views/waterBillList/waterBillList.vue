@@ -4,7 +4,7 @@
 			<p class="info">户名：袁敏棠</p>
 			<div class="info">
 				户号：
-				<Picker :custom="true" title="户号" v-model="accountNumber" :columns="accountNumberList" />
+				<Picker :custom="true" title="户号" v-model="accountNumber" :columns="accountNumberList" @change="hanlderChange" />
 				<div class="iconWrapper">
 					<van-icon size="12" name="arrow-down" />
 				</div>
@@ -38,6 +38,9 @@ export default {
 			accountNumberList: ['1234567890', '0987654321'],
 			list: [1, 2, 3, 4]
 		};
+	},
+	methods: {
+		hanlderChange() {}
 	}
 };
 </script>

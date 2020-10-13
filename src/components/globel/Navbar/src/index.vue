@@ -7,7 +7,7 @@
 			<div class="goHome" v-if="$route.name !== 'Home'">
 				<router-link to="/">
 					<div class="goHomeWrapper">
-						<van-icon name="wap-home-o" size="30" color="#ffffff"></van-icon>
+						<van-icon name="wap-home-o" size="24" color="#ffffff"></van-icon>
 					</div>
 				</router-link>
 			</div>

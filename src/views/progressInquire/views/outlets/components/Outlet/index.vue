@@ -49,6 +49,7 @@ export default {
 	background-color: #ffffff;
 	border-radius: 8px;
 	overflow: hidden;
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 	h4 {
 		margin-bottom: 8px;
 		font-size: 16px;
@@ -73,7 +74,7 @@ export default {
 		font-size: 12px;
 		color: #b4b4b4;
 		p {
-			margin-top: 6px;
+			line-height: 1.4;
 		}
 	}
 	.contact {

@@ -58,7 +58,6 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-	document.documentElement.scrollTop = 0;
 	if (to.meta.title) {
 		document.title = to.meta.title;
 	}

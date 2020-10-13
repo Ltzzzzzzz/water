@@ -7,7 +7,7 @@
 			<div class="finish"></div>
 			<p>已缴清</p>
 		</div>
-		<router-link :to="{ name: 'queryWaterBillDetail', params: { keepAlive: $route.name } }" class="detailContainer">
+		<router-link to="/queryWaterBillDetail" class="detailContainer">
 			<div class="detailWrapper">
 				<div class="infoWrapper">
 					<span class="label">总金额</span>
