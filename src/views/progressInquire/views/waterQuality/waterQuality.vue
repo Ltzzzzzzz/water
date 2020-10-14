@@ -1,28 +1,26 @@
 <template>
 	<div id="waterQuality" class="pageContainer">
-		<PageModel>
-			<Navbar>
-				<div class="infoWrapper">
-					<div class="info">
-						<Picker :custom="true" title="地区" v-model="area" :columns="areas" @change="hanlderChange" />
-						<div class="iconWrapper">
-							<van-icon size="14" name="arrow-down" />
-						</div>
+		<Navbar>
+			<div class="infoWrapper">
+				<div class="info">
+					<Picker :custom="true" title="地区" v-model="area" :columns="areas" @change="hanlderChange" />
+					<div class="iconWrapper">
+						<van-icon size="14" name="arrow-down" />
 					</div>
-					<p class="desc">水质公告</p>
 				</div>
-			</Navbar>
-			<div class="container">
-				<div class="tip" v-if="!list.length"><van-empty description="暂无水质公告" /></div>
-				<div class="list" v-else>
-					<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
-						<van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
-							<WaterQualityItem v-for="item in list" :key="item.id" :data="item" />
-						</van-list>
-					</van-pull-refresh>
-				</div>
+				<p class="desc">水质公告</p>
 			</div>
-		</PageModel>
+		</Navbar>
+		<div class="container">
+			<div class="tip" v-if="!list.length"><van-empty description="暂无水质公告" /></div>
+			<div class="list" v-else>
+				<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
+					<van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
+						<WaterQualityItem v-for="item in list" :key="item.id" :data="item" />
+					</van-list>
+				</van-pull-refresh>
+			</div>
+		</div>
 	</div>
 </template>
 

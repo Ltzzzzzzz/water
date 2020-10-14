@@ -1,8 +1,10 @@
 <template>
 	<div id="app">
-		<keep-alive :include="keepAlive">
-			<router-view />
-		</keep-alive>
+		<PageModel>
+			<keep-alive :include="keepAlive">
+				<router-view />
+			</keep-alive>
+		</PageModel>
 	</div>
 </template>
 <script>
