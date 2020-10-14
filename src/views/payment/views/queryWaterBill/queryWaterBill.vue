@@ -1,38 +1,40 @@
 <template>
 	<div id="queryWaterBill" class="pageContainer">
-		<Navbar>
-			<p class="desc">
-				尊敬的用户 <br />
-				请输入您的信息进行查询
-			</p>
-		</Navbar>
-		<div class="container">
-			<van-form @submit="submit">
-				<div class="formWrapper">
-					<van-field v-model="accountNumber" name="accountNumber" label="户号" placeholder="户号" :rules="rules.accountNumber" />
-					<van-field v-model="accountName" name="accountName" label="户名" placeholder="户名" :rules="rules.accountName" />
-					<DatePicker placeholder="开始时间" name="startDate" forward="1" :rules="rules.startDate" v-model="startDate"></DatePicker>
-					<DatePicker placeholder="结束时间" name="endDate" v-model="endDate"></DatePicker>
-					<div class="buttonWrapper">
-						<van-button size="small" text="查询" round block type="info" native-type="submit" />
+		<PageModel>
+			<Navbar>
+				<p class="desc">
+					尊敬的用户 <br />
+					请输入您的信息进行查询
+				</p>
+			</Navbar>
+			<div class="container">
+				<van-form @submit="submit">
+					<div class="formWrapper">
+						<van-field v-model="accountNumber" name="accountNumber" label="户号" placeholder="户号" :rules="rules.accountNumber" />
+						<van-field v-model="accountName" name="accountName" label="户名" placeholder="户名" :rules="rules.accountName" />
+						<DatePicker placeholder="开始时间" name="startDate" forward="1" :rules="rules.startDate" v-model="startDate"></DatePicker>
+						<DatePicker placeholder="结束时间" name="endDate" v-model="endDate"></DatePicker>
+						<div class="buttonWrapper">
+							<van-button size="small" text="查询" round block type="info" native-type="submit" />
+						</div>
 					</div>
+				</van-form>
+				<div class="tip" v-if="!list.length"><van-empty /></div>
+				<div class="billList" v-else>
+					<div class="ctrlWrapper">
+						<div class="switchWrapper" @click="switchCheck = !switchCheck">
+							<van-switch size="16" v-model="switchCheck" active-color="#07c160" inactive-color="#ee0a24" @click.stop /><span>全选</span>
+						</div>
+						<div class="buttonWrapper">
+							<van-button block round size="mini" type="primary" text="缴 费" />
+						</div>
+					</div>
+					<van-list v-model="loading" :finished="finished" error-text="请求失败，点击重新加载" finished-text="没有更多了" @load="onLoad">
+						<QueryWaterBillItem v-for="item in list" :key="item.id" :data="item" />
+					</van-list>
 				</div>
-			</van-form>
-			<div class="tip" v-if="!list.length"><van-empty /></div>
-			<div class="billList" v-else>
-				<div class="ctrlWrapper">
-					<div class="switchWrapper" @click="switchCheck = !switchCheck">
-						<van-switch size="16" v-model="switchCheck" active-color="#07c160" inactive-color="#ee0a24" @click.stop /><span>全选</span>
-					</div>
-					<div class="buttonWrapper">
-						<van-button block round size="mini" type="primary" text="缴 费" />
-					</div>
-				</div>
-				<van-list v-model="loading" :finished="finished" error-text="请求失败，点击重新加载" finished-text="没有更多了" @load="onLoad">
-					<QueryWaterBillItem v-for="item in list" :key="item.id" :data="item" />
-				</van-list>
 			</div>
-		</div>
+		</PageModel>
 	</div>
 </template>
 

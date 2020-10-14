@@ -1,11 +1,13 @@
 <template>
 	<div id="forms" class="pageContainer">
-		<Navbar>
-			<h2>{{ $route.params.formTitle }}</h2>
-		</Navbar>
-		<div class="container">
-			<component :is="$route.params.formName" />
-		</div>
+		<PageModel>
+			<Navbar>
+				<h2>{{ $route.params.formTitle }}</h2>
+			</Navbar>
+			<div class="container">
+				<component :is="$route.params.formName" />
+			</div>
+		</PageModel>
 	</div>
 </template>
 

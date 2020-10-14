@@ -1,26 +1,28 @@
 <template>
 	<div id="waterOff" class="pageContainer">
-		<Navbar>
-			<div class="infoWrapper">
-				<div class="info">
-					<Picker :custom="true" title="地区" v-model="area" :columns="areas" @change="hanlderChange" />
-					<div class="iconWrapper">
-						<van-icon size="14" name="arrow-down" />
+		<PageModel>
+			<Navbar>
+				<div class="infoWrapper">
+					<div class="info">
+						<Picker :custom="true" title="地区" v-model="area" :columns="areas" @change="hanlderChange" />
+						<div class="iconWrapper">
+							<van-icon size="14" name="arrow-down" />
+						</div>
 					</div>
+					<p class="desc">停水通知</p>
 				</div>
-				<p class="desc">停水通知</p>
+			</Navbar>
+			<div class="container">
+				<div class="tip" v-if="!list.length"><van-empty description="暂无停水通知" /></div>
+				<div class="list" v-else>
+					<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
+						<van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
+							<CutOffNotice v-for="item in list" :key="item.id" :data="item" />
+						</van-list>
+					</van-pull-refresh>
+				</div>
 			</div>
-		</Navbar>
-		<div class="container">
-			<div class="tip" v-if="!list.length"><van-empty description="暂无停水通知" /></div>
-			<div class="list" v-else>
-				<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
-					<van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
-						<CutOffNotice v-for="item in list" :key="item.id" :data="item" />
-					</van-list>
-				</van-pull-refresh>
-			</div>
-		</div>
+		</PageModel>
 	</div>
 </template>
 

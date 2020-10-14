@@ -44,8 +44,8 @@ export default {
 		justify-content: space-between;
 		align-items: center;
 		.logoWrapper {
-			max-width: 120px;
-			height: 40px;
+			max-width: 80px;
+			height: 20px;
 		}
 		.goHome {
 			padding: 4px 5px;

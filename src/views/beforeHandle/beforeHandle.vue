@@ -1,17 +1,19 @@
 <template>
 	<div id="beforeHandle" class="pageContainer">
-		<Navbar>
-			<p class="desc">
-				{{ $route.meta.desc }}
-			</p>
-		</Navbar>
-		<div class="container">
-			<ExChangeModel :showData="$route.meta.dataDownload" />
-			<Notice v-model="agree" v-if="!$route.meta.direct" />
-			<div class="buttonWrapper">
-				<van-button block type="info" text="办理" @click="goExchangeForm" />
+		<PageModel>
+			<Navbar>
+				<p class="desc">
+					{{ $route.meta.desc }}
+				</p>
+			</Navbar>
+			<div class="container">
+				<ExChangeModel :showData="$route.meta.dataDownload" />
+				<Notice v-model="agree" v-if="!$route.meta.direct" />
+				<div class="buttonWrapper">
+					<van-button block type="info" text="办理" @click="goExchangeForm" />
+				</div>
 			</div>
-		</div>
+		</PageModel>
 	</div>
 </template>
 

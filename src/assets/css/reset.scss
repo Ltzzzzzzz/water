@@ -104,3 +104,15 @@ hr {
 input, select {
     vertical-align:middle;
 }
+
+.clearfix {
+	display: inline-block;
+	&:after {
+		display: block;
+		content: '.';
+		visibility: hidden;
+		height: 0;
+		line-height: 0;
+		clear: both;
+	}
+}
