@@ -6,6 +6,9 @@ const mutations = {
 	},
 	[types.SET_SCROLLTOP](state, scrollTop) {
 		state.scrollTop = scrollTop;
+	},
+	[types.SET_PAGE_ANIMATION](state, pageAnimation) {
+		state.pageAnimation = pageAnimation;
 	}
 };
 

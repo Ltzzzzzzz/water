@@ -106,7 +106,7 @@ input, select {
 }
 
 .clearfix {
-	display: inline-block;
+    zoom: 1;
 	&:after {
 		display: block;
 		content: '.';

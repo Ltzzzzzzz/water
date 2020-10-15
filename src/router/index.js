@@ -5,6 +5,7 @@ import progressInquire from './progressInquire'; // 进度查询
 import exchange from './exchange'; // 信息变更
 import waterApplication from './waterApplication'; // 用水申请
 import others from './others'; // 其他业务
+import store from '@/store';
 
 if (!window.VueRouter) Vue.use(VueRouter);
 // 基本路由
@@ -59,10 +60,30 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
+	if (from.meta.fromRoute && from.meta.fromRoute === to.name) {
+		store.commit('globel/setPageAnimation', 'slide-right');
+	} else {
+		store.commit('globel/setPageAnimation', 'slide-left');
+		setFromRoute(to, from);
+	}
 	if (to.meta.title) {
 		document.title = to.meta.title;
 	}
 	next();
 });
+
+function setFromRoute(toRoute, fromRoute) {
+	if (toRoute.name === 'home') return;
+	routes.some(route => {
+		if (route.name === toRoute.name) {
+			if (route.name === 'forms') {
+				route.meta.fromRoute = fromRoute.meta.fromRoute;
+			} else {
+				route.meta.fromRoute = fromRoute.name;
+			}
+			return true;
+		}
+	});
+}
 
 export default router;
