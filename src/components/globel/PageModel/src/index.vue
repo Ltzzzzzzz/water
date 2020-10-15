@@ -37,6 +37,9 @@ export default {
 	}
 	.footWrapper {
 		margin-top: -64px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 		height: 64px;
 		.logoWrapper {
 			padding: 5px 0;
@@ -54,7 +57,6 @@ export default {
 			}
 		}
 		.call {
-			margin-top: 6px;
 			font-size: 12px;
 			text-align: center;
 			color: #707070;

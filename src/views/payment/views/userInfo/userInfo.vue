@@ -42,8 +42,9 @@ export default {
 
 <style lang="scss" scoped>
 .infoWrapper {
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	border-radius: 8px;
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 	overflow: hidden;
 }
 </style>

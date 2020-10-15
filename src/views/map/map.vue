@@ -1,5 +1,5 @@
 <template>
-	<div id="map" class="pageContainer">
+	<div id="map" class="pageContainer" :style="{ height: pageHeight }">
 		<BaiduMap class="bm-view" ak="unNMuxcUFcLW0ZDGaPYS8XzeVxtndhxs" :center="center" :zoom="15" :double-click-zoom="false" :mapStyle="mapStyle">
 			<bm-map-type :map-types="['BMAP_NORMAL_MAP', 'BMAP_HYBRID_MAP']" anchor="BMAP_ANCHOR_TOP_RIGHT" />
 			<bm-marker :position="center" @click="show = true">
@@ -49,6 +49,11 @@ export default {
 				]
 			}
 		};
+	},
+	computed: {
+		pageHeight() {
+			return `${innerHeight - 64}px`;
+		}
 	},
 	methods: {
 		getPoint() {
