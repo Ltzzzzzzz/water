@@ -37,6 +37,7 @@ let routes = [
 	{
 		path: '/map',
 		name: 'map',
+		meta: {},
 		component: () => import(/* webpackChunkName: "map" */ 'views/map/map')
 	},
 	{
@@ -60,6 +61,7 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
+	// 设置路由动画
 	if (from.meta.fromRoute && from.meta.fromRoute === to.name) {
 		store.commit('globel/setPageAnimation', 'slide-right');
 	} else {
@@ -71,12 +73,13 @@ router.beforeEach((to, from, next) => {
 	}
 	next();
 });
-
+// 设置当前路由来自哪个路由
 function setFromRoute(toRoute, fromRoute) {
 	if (toRoute.name === 'home') return;
 	routes.some(route => {
 		if (route.name === toRoute.name) {
 			if (route.name === 'forms') {
+				// 表单路由，设置为表单汇总的路由
 				route.meta.fromRoute = fromRoute.meta.fromRoute;
 			} else {
 				route.meta.fromRoute = fromRoute.name;

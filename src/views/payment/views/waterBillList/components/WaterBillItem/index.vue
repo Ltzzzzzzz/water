@@ -6,7 +6,7 @@
 			至
 			<p class="date">2020-09-21</p>
 		</div>
-		<div class="container">
+		<div class="itemContainer">
 			<p class="money">57.2元</p>
 			<div class="statusWrapper finish">
 				<div class="status">已销帐</div>
@@ -61,7 +61,8 @@ export default {
 			margin: 10px 0;
 		}
 	}
-	.container {
+	.itemContainer {
+		padding: 10px;
 		flex: 1;
 		position: relative;
 		display: flex;

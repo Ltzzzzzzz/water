@@ -1,51 +1,45 @@
 <template>
 	<div class="outlet">
-		<div class="container">
-			<h4>xx营业厅</h4>
-			<div class="businessHours">
-				<p class="label">营业时间：</p>
-				<div class="hours">
-					<p class="hour">周一至周五：08:00 - 17:00</p>
-					<p class="hour">周六：09:00 - 16:00</p>
-					<p class="hour">周日：休息</p>
-				</div>
+		<h4>xx营业厅</h4>
+		<div class="businessHours">
+			<p class="label">营业时间：</p>
+			<div class="hours">
+				<p class="hour">周一至周五：08:00 - 17:00</p>
+				<p class="hour">周六：09:00 - 16:00</p>
+				<p class="hour">周日：休息</p>
 			</div>
-			<div class="info">
-				<p>地址：东区竹苑路银竹街23号</p>
-				<p>电话：0760-123456</p>
+		</div>
+		<div class="info">
+			<p>地址：东区竹苑路银竹街23号</p>
+			<p>电话：0760-123456</p>
+		</div>
+		<div class="contact">
+			<div class="item">
+				<van-icon name="location" color="#1e7fb8" size="20" />
+				<p>到这里</p>
 			</div>
-			<div class="contact">
-				<div class="item">
-					<van-icon name="location" color="#1e7fb8" size="20" />
-					<p>到这里</p>
-				</div>
-				<a href="tel:0760-123456" class="item">
-					<van-icon name="phone" color="#1e7fb8" size="20" />
-					<p>打电话</p>
-				</a>
-				<div class="item" @click="watchMap">
-					<van-icon name="map-marked" color="#1e7fb8" size="20" />
-					<p>看地图</p>
-				</div>
-			</div>
+			<a href="tel:0760-123456" class="item">
+				<van-icon name="phone" color="#1e7fb8" size="20" />
+				<p>打电话</p>
+			</a>
+			<router-link class="item" to="/map">
+				<van-icon name="map-marked" color="#1e7fb8" size="20" />
+				<p>看地图</p>
+			</router-link>
 		</div>
 	</div>
 </template>
 
 <script>
 export default {
-	name: 'Outlet',
-	methods: {
-		watchMap() {
-			this.$router.push('/map');
-		}
-	}
+	name: 'Outlet'
 };
 </script>
 
 <style lang="scss" scoped>
 .outlet {
 	margin-bottom: 10px;
+	padding: 10px;
 	background-color: #ffffff;
 	border-radius: 8px;
 	overflow: hidden;

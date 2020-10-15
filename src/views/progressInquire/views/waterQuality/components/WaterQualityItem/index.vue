@@ -1,16 +1,14 @@
 <template>
 	<div class="waterQualityItem" @click="goDetail">
-		<div class="container">
-			<h4>{{ data.title }}</h4>
-			<div class="infoWrapper">
-				<p class="author">{{ data.author }}</p>
-				<div class="infoItem">
-					<p class="label">
-						<van-icon name="underway-o" color="#ee0a24" />
-						<span>更新时间</span>
-					</p>
-					<p class="info">{{ data.upDate }}</p>
-				</div>
+		<h4>{{ data.title }}</h4>
+		<div class="infoWrapper">
+			<p class="author">{{ data.author }}</p>
+			<div class="infoItem">
+				<p class="label">
+					<van-icon name="underway-o" color="#ee0a24" />
+					<span>更新时间</span>
+				</p>
+				<p class="info">{{ data.upDate }}</p>
 			</div>
 		</div>
 	</div>
@@ -36,6 +34,7 @@ export default {
 <style lang="scss" scoped>
 .waterQualityItem {
 	margin-bottom: 10px;
+	padding: 10px;
 	background-color: #ffffff;
 	border-radius: 8px;
 	overflow: hidden;

@@ -1,29 +1,27 @@
 <template>
 	<div class="cutOffNotice" @click="goDetail">
-		<div class="container">
-			<h4>{{ data.title }}</h4>
-			<div class="infoWrapper">
-				<div class="infoItem">
-					<p class="label">
-						<van-icon name="location-o" color="#576b95" />
-						<span>所需区域</span>
-					</p>
-					<p class="info">{{ data.area }}</p>
-				</div>
-				<div class="infoItem">
-					<p class="label">
-						<van-icon name="label-o" color="#ed6a0c" />
-						<span>停水类型</span>
-					</p>
-					<p class="info">{{ data.project }}</p>
-				</div>
-				<div class="infoItem">
-					<p class="label">
-						<van-icon name="underway-o" color="#ee0a24" />
-						<span>停水时间</span>
-					</p>
-					<p class="info">{{ data.cutOffDate }}</p>
-				</div>
+		<h4>{{ data.title }}</h4>
+		<div class="infoWrapper">
+			<div class="infoItem">
+				<p class="label">
+					<van-icon name="location-o" color="#576b95" />
+					<span>所需区域</span>
+				</p>
+				<p class="info">{{ data.area }}</p>
+			</div>
+			<div class="infoItem">
+				<p class="label">
+					<van-icon name="label-o" color="#ed6a0c" />
+					<span>停水类型</span>
+				</p>
+				<p class="info">{{ data.project }}</p>
+			</div>
+			<div class="infoItem">
+				<p class="label">
+					<van-icon name="underway-o" color="#ee0a24" />
+					<span>停水时间</span>
+				</p>
+				<p class="info">{{ data.cutOffDate }}</p>
 			</div>
 		</div>
 	</div>
@@ -49,6 +47,7 @@ export default {
 <style lang="scss" scoped>
 .cutOffNotice {
 	margin-bottom: 10px;
+	padding: 10px;
 	background-color: #ffffff;
 	border-radius: 8px;
 	overflow: hidden;
