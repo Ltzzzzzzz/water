@@ -7,6 +7,10 @@ import 'css/reset.scss'; // 移动端重置样式
 import '@/global.components.config'; // 全局自定义组件配置
 import echarts from './echarts.config'; // echarts配置
 
+import axios from 'axios';
+
+Vue.prototype.$axios = axios;
+
 // 挂载echarts
 Vue.prototype.$echarts = echarts;
 

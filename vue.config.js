@@ -27,7 +27,8 @@ module.exports = {
 		overlay: {
 			warnings: true,
 			errors: true
-		}
+		},
+		disableHostCheck: true // natapp内网穿透
 	},
 	configureWebpack: config => {
 		// 生产环境相关配置

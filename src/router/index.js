@@ -61,17 +61,25 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-	// 设置路由动画
-	if (from.meta.fromRoute && from.meta.fromRoute === to.name) {
-		store.commit('globel/setPageAnimation', 'slide-right');
+	const ua = navigator.userAgent;
+	let url = process.env.VUE_APP_REDIRECT_URI,
+		appid = process.env.VUE_APP_WECHAT_APP_ID;
+
+	if (String(navigator.userAgent.match(/MicroMessenger/i)) === 'MicroMessenger') {
+		location.href = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appid}&redirect_uri=${url}&response_type=code&scope=snsapi_base&state=200#wechat_redirect`;
 	} else {
-		store.commit('globel/setPageAnimation', 'slide-left');
-		setFromRoute(to, from);
+		// 设置路由动画
+		if (from.meta.fromRoute && from.meta.fromRoute === to.name) {
+			store.commit('globel/setPageAnimation', 'slide-right');
+		} else {
+			store.commit('globel/setPageAnimation', 'slide-left');
+			setFromRoute(to, from);
+		}
+		if (to.meta.title) {
+			document.title = to.meta.title;
+		}
+		next();
 	}
-	if (to.meta.title) {
-		document.title = to.meta.title;
-	}
-	next();
 });
 // 设置当前路由来自哪个路由
 function setFromRoute(toRoute, fromRoute) {
