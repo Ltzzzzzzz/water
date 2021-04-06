@@ -13,10 +13,10 @@
 					:rules="[{ required: true, message: '请选择户号' }]"
 					@change="accountNumberChange"
 				/>
-				<van-field class="required" disabled v-model="region" name="region" label="区域" placeholder="区域" :rules="[{ required: true, message: '区域为必填项' }]" />
+				<van-field required disabled v-model="region" name="region" label="区域" placeholder="区域" :rules="[{ required: true, message: '区域为必填项' }]" />
 				<van-field disabled v-model="userName" name="userName" label="用户名" placeholder="用户名" />
-				<van-field class="required" disabled v-model="address" name="address" label="用水地址" placeholder="用水地址" :rules="[{ required: true, message: '请填用水地址' }]" />
-				<van-field class="required" v-model="contacter" name="contacter" label="联系人" placeholder="联系人" />
+				<van-field required disabled v-model="address" name="address" label="用水地址" placeholder="用水地址" :rules="[{ required: true, message: '请填用水地址' }]" />
+				<van-field required v-model="contacter" name="contacter" label="联系人" placeholder="联系人" />
 				<Picker
 					:required="true"
 					name="typeOfCertificate"
@@ -26,19 +26,11 @@
 					:columns="certificates"
 					:rules="[{ required: true, message: '请选择证件类型' }]"
 				/>
-				<van-field class="required" v-model="certificate" name="certificate" label="证件号码" placeholder="证件号码" :rules="[{ required: true, message: '请填证件号码' }]" />
-				<van-field class="required" v-model="mailingAddress" name="mailingAddress" label="通讯地址" placeholder="通讯地址" :rules="[{ required: true, message: '请填通讯地址' }]" />
+				<van-field required v-model="certificate" name="certificate" label="证件号码" placeholder="证件号码" :rules="[{ required: true, message: '请填证件号码' }]" />
+				<van-field required v-model="mailingAddress" name="mailingAddress" label="通讯地址" placeholder="通讯地址" :rules="[{ required: true, message: '请填通讯地址' }]" />
 
-				<van-field
-					class="required"
-					type="tel"
-					v-model="phoneNumber"
-					name="phoneNumber"
-					label="手机号码"
-					placeholder="手机号码"
-					:rules="[{ validator: phoneReg, message: '请填正确的手机号码' }]"
-				/>
-				<van-field class="required" type="digit" v-model="verificationCode" name="verificationCode" label="验证码" placeholder="验证码" :rules="[{ required: true, message: '请填验证码' }]">
+				<van-field required type="tel" v-model="phoneNumber" name="phoneNumber" label="手机号码" placeholder="手机号码" :rules="[{ validator: phoneReg, message: '请填正确的手机号码' }]" />
+				<van-field required type="digit" v-model="verificationCode" name="verificationCode" label="验证码" placeholder="验证码" :rules="[{ required: true, message: '请填验证码' }]">
 					<template #button>
 						<van-button block size="mini" type="primary" text="发送验证码" native-type="button" />
 					</template>

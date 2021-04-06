@@ -16,6 +16,7 @@
 
 <script>
 import Signature from './src';
+import commonApi from 'api/common';
 export default {
 	name: 'SignatureBoard',
 	props: ['visible', 'fileList'],
@@ -41,10 +42,13 @@ export default {
 		},
 		reset() {
 			this.signature.reset();
+			this.$emit('update:file', {});
 		},
-		confirm() {
-			let rs = this.signature.save();
-			this.$emit('update:fileList', [rs]);
+		async confirm() {
+			let canv = this.signature.save();
+			const rs = await commonApi.upload({ file: canv.file });
+			Object.assign(canv, { fileStr: rs.data });
+			this.$emit('update:file', canv);
 			this.cancel();
 		}
 	}

@@ -13,19 +13,11 @@
 					:rules="[{ required: true, message: '请选择户号' }]"
 					@change="accountNumberChange"
 				/>
-				<van-field class="required" disabled v-model="region" name="region" label="区域" placeholder="区域" :rules="[{ required: true, message: '区域为必填项' }]" />
+				<van-field required disabled v-model="region" name="region" label="区域" placeholder="区域" :rules="[{ required: true, message: '区域为必填项' }]" />
 				<van-field disabled v-model="userName" name="userName" label="用户名" placeholder="用户名" />
-				<van-field class="required" disabled v-model="address" name="address" label="用水地址" placeholder="用水地址" :rules="[{ required: true, message: '请填用水地址' }]" />
-				<van-field class="required" v-model="application" name="application" label="申请人" placeholder="申请人" />
-				<van-field
-					class="required"
-					type="tel"
-					v-model="phoneNumber"
-					name="phoneNumber"
-					label="手机号码"
-					placeholder="手机号码"
-					:rules="[{ validator: phoneReg, message: '请填正确的手机号码' }]"
-				/>
+				<van-field required disabled v-model="address" name="address" label="用水地址" placeholder="用水地址" :rules="[{ required: true, message: '请填用水地址' }]" />
+				<van-field required v-model="application" name="application" label="申请人" placeholder="申请人" />
+				<van-field required type="tel" v-model="phoneNumber" name="phoneNumber" label="手机号码" placeholder="手机号码" :rules="[{ validator: phoneReg, message: '请填正确的手机号码' }]" />
 				<van-field type="tel" v-model="tellNumber" name="tellNumber" label="联系电话" placeholder="联系电话" :rules="[{ validator: telReg, message: '请填正确的电话号码' }]" />
 				<Picker
 					:required="true"
@@ -36,7 +28,7 @@
 					:columns="certificates"
 					:rules="[{ required: true, message: '请选择证件类型' }]"
 				/>
-				<van-field class="required" v-model="certificate" name="certificate" label="证件号码" placeholder="证件号码" :rules="[{ required: true, message: '请填证件号码' }]" />
+				<van-field required v-model="certificate" name="certificate" label="证件号码" placeholder="证件号码" :rules="[{ required: true, message: '请填证件号码' }]" />
 				<Picker :required="true" name="nature" title="用水性质" placeholder="用水性质" v-model="nature" :columns="natures" :rules="[{ required: true, message: '请选择用水性质' }]" />
 			</div>
 			<div class="infoWrapper">

@@ -5,21 +5,13 @@
 				<h4 class="title">填写表单信息</h4>
 				<Picker :required="true" name="region" title="区域" placeholder="区域" v-model="region" :columns="regions" :rules="[{ required: true, message: '请选择区域' }]" />
 				<van-field v-model="accountNumber" type="digit" name="accountNumber" label="户号" placeholder="户号" @change="accountNumberChange" />
-				<van-field class="required" v-model="userName" name="userName" label="用户名" placeholder="用户名" :rules="[{ required: true, message: '请填用户名' }]" />
-				<van-field class="required" v-model="address" name="address" label="用水地址" placeholder="用水地址" :rules="[{ required: true, message: '请填用水地址' }]" />
-				<van-field class="required" v-model="contacter" name="contacter" label="联系人" placeholder="联系人" />
-				<van-field
-					class="required"
-					type="tel"
-					v-model="phoneNumber"
-					name="phoneNumber"
-					label="手机号码"
-					placeholder="手机号码"
-					:rules="[{ validator: phoneReg, message: '请填正确的手机号码' }]"
-				/>
+				<van-field required v-model="userName" name="userName" label="用户名" placeholder="用户名" :rules="[{ required: true, message: '请填用户名' }]" />
+				<van-field required v-model="address" name="address" label="用水地址" placeholder="用水地址" :rules="[{ required: true, message: '请填用水地址' }]" />
+				<van-field required v-model="contacter" name="contacter" label="联系人" placeholder="联系人" />
+				<van-field required type="tel" v-model="phoneNumber" name="phoneNumber" label="手机号码" placeholder="手机号码" :rules="[{ validator: phoneReg, message: '请填正确的手机号码' }]" />
 				<van-field type="tel" v-model="tellNumber" name="tellNumber" label="联系电话" placeholder="联系电话" :rules="[{ validator: telReg, message: '请填正确的电话号码' }]" />
 				<van-field
-					class="required"
+					required
 					v-model="remark"
 					rows="2"
 					name="remark"

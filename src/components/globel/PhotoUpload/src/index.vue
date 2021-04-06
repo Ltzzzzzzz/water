@@ -3,32 +3,43 @@
 		<h4 class="label" :class="{ required }">{{ label }}</h4>
 		<p class="placeholder">{{ placeholder }}</p>
 		<div class="vanWrapper">
-			<van-field :name="name" :rules="rules">
-				<template #input>
-					<van-uploader v-model="fileList" :max-count="maxcount ? maxcount : 6">
-						<div class="uploadWrapper">
-							<div class="iconWrapper" v-if="!image">
-								<van-icon size="40" color="#dcdee0" name="photograph" />
-							</div>
-							<div class="imageWrapper" v-else>
-								<van-image width="100%" height="100%" :src="image" />
-							</div>
-						</div>
-					</van-uploader>
-				</template>
-			</van-field>
+			<van-uploader v-model="fileList" :max-count="maxcount ? maxcount : 6" :after-read="afterRead" @delete="remove">
+				<div class="uploadWrapper">
+					<div class="iconWrapper" v-if="!image">
+						<van-icon size="40" color="#dcdee0" name="photograph" />
+					</div>
+					<div class="imageWrapper" v-else>
+						<van-image width="100%" height="100%" :src="image" />
+					</div>
+				</div>
+			</van-uploader>
+			<van-field :name="name" :rules="rules" v-model="filesStr" />
 		</div>
 	</div>
 </template>
 
 <script>
+import commonApi from 'api/common';
 export default {
 	name: 'PhotoUpload',
 	props: ['required', 'name', 'label', 'placeholder', 'rules', 'image', 'maxcount'],
 	data() {
 		return {
-			fileList: []
+			fileList: [],
+			filesStr: ''
 		};
+	},
+	methods: {
+		async afterRead() {
+			const file = this.fileList.map(x => x.file)[0];
+			const rs = await commonApi.upload({ file });
+			this.filesStr = rs.data;
+		},
+		remove(e, i) {
+			const arr = this.filesStr.split(',');
+			arr.splice(i.index, 1);
+			this.filesStr = arr.join(',');
+		}
 	}
 };
 </script>
@@ -72,6 +83,17 @@ export default {
 	.vanWrapper {
 		display: flex;
 		justify-content: center;
+		flex-direction: column;
+		padding: 10px 16px;
+		/deep/.van-cell {
+			padding: 0;
+			&:after {
+				display: none;
+			}
+			.van-field__body {
+				display: none;
+			}
+		}
 		/deep/.van-uploader {
 			width: 100%;
 			.van-uploader__input-wrapper {
@@ -81,7 +103,7 @@ export default {
 					width: 100%;
 					height: 0;
 					padding-bottom: 50%;
-					margin-bottom: 10px;
+					// margin-bottom: 10px;
 					border-radius: 8px;
 					background-color: #f7f8fa;
 					.iconWrapper {

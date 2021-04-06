@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import account from 'api/account.js';
 export default {
 	name: 'register',
 	data() {
@@ -37,7 +38,10 @@ export default {
 		};
 	},
 	methods: {
-		submit(v) {}
+		async submit(v) {
+			let rs = await account.register(v);
+			console.log(rs);
+		}
 	}
 };
 </script>

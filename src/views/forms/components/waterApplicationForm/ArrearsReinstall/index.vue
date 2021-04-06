@@ -13,20 +13,12 @@
 					:rules="[{ required: true, message: '请选择户号' }]"
 					@change="accountNumberChange"
 				/>
-				<van-field class="required" disabled v-model="region" name="region" label="区域" placeholder="区域" :rules="[{ required: true, message: '区域为必填项' }]" />
+				<van-field required disabled v-model="region" name="region" label="区域" placeholder="区域" :rules="[{ required: true, message: '区域为必填项' }]" />
 				<van-field disabled v-model="userName" name="userName" label="用户名" placeholder="用户名" />
-				<van-field class="required" disabled v-model="address" name="address" label="用水地址" placeholder="用水地址" :rules="[{ required: true, message: '请填用水地址' }]" />
+				<van-field required disabled v-model="address" name="address" label="用水地址" placeholder="用水地址" :rules="[{ required: true, message: '请填用水地址' }]" />
 				<van-field disabled v-model="userStatus" name="userStatus" label="用户状态" placeholder="用户状态" />
-				<van-field class="required" v-model="contact" name="contact" label="联系人" placeholder="联系人" :rules="[{ required: true, message: '请填联系人' }]" />
-				<van-field
-					type="tel"
-					class="required"
-					v-model="phoneNumber"
-					name="phoneNumber"
-					label="手机号码"
-					placeholder="手机号码"
-					:rules="[{ validator: phoneReg, message: '请填正确的手机号码' }]"
-				/>
+				<van-field required v-model="contact" name="contact" label="联系人" placeholder="联系人" :rules="[{ required: true, message: '请填联系人' }]" />
+				<van-field type="tel" required v-model="phoneNumber" name="phoneNumber" label="手机号码" placeholder="手机号码" :rules="[{ validator: phoneReg, message: '请填正确的手机号码' }]" />
 				<van-field type="tel" v-model="tell" name="tell" label="联系电话" placeholder="联系电话" :rules="[{ validator: telReg, message: '请填正确的电话号码' }]" />
 			</div>
 			<div class="submit">

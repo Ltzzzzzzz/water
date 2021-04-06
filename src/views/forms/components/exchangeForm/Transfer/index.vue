@@ -5,11 +5,11 @@
 				<h4 class="title">填写表单信息</h4>
 				<Picker :required="true" name="region" title="区域" placeholder="区域" v-model="region" :columns="regions" :rules="[{ required: true, message: '请选择区域' }]" />
 				<van-field v-model="accountNumber" type="digit" name="accountNumber" label="户号" placeholder="户号" @change="accountNumberChange" />
-				<van-field class="required" v-model="originUserName" name="originUserName" label="原用户名" placeholder="原用户名" :rules="[{ required: true, message: '请填原用户名' }]" />
-				<van-field class="required" v-model="address" name="address" label="用水地址" placeholder="用水地址" :rules="[{ required: true, message: '请填用水地址' }]" />
+				<van-field required v-model="originUserName" name="originUserName" label="原用户名" placeholder="原用户名" :rules="[{ required: true, message: '请填原用户名' }]" />
+				<van-field required v-model="address" name="address" label="用水地址" placeholder="用水地址" :rules="[{ required: true, message: '请填用水地址' }]" />
 				<van-field v-model="currentPeriod" disabled type="number" name="currentPeriod" label="本期行至" placeholder="本期行至" />
 				<van-field v-model="currentPeriodDate" disabled name="currentPeriodDate" label="本期抄表日" placeholder="本期抄表日" />
-				<van-field class="required" v-model="newUserName" name="newUserName" label="新用户名" placeholder="新用户名" :rules="[{ required: true, message: '请填新用户名' }]" />
+				<van-field required v-model="newUserName" name="newUserName" label="新用户名" placeholder="新用户名" :rules="[{ required: true, message: '请填新用户名' }]" />
 				<Picker
 					:required="true"
 					name="typeOfCertificate"
@@ -19,26 +19,26 @@
 					:columns="certificates"
 					:rules="[{ required: true, message: '请选择证件类型' }]"
 				/>
-				<van-field class="required" v-model="certificate" name="certificate" label="证件号码" placeholder="证件号码" :rules="[{ required: true, message: '请填证件号码' }]" />
-				<van-field class="required" v-model="newContact" name="newContact" label="新联系人" placeholder="新联系人" :rules="[{ required: true, message: '请填新联系人' }]" />
+				<van-field required v-model="certificate" name="certificate" label="证件号码" placeholder="证件号码" :rules="[{ required: true, message: '请填证件号码' }]" />
+				<van-field required v-model="newContact" name="newContact" label="新联系人" placeholder="新联系人" :rules="[{ required: true, message: '请填新联系人' }]" />
 				<van-field type="tel" v-model="newTell" name="newTell" label="新联系电话" placeholder="新联系电话" :rules="[{ validator: telReg, message: '请填正确的电话号码' }]" />
 				<van-field
 					type="tel"
-					class="required"
+					required
 					v-model="newPhoneNumber"
 					name="newPhoneNumber"
 					label="新手机号码"
 					placeholder="新手机号码"
 					:rules="[{ validator: phoneReg, message: '请填正确的手机号码' }]"
 				/>
-				<van-field class="required" type="digit" v-model="verificationCode" name="verificationCode" label="验证码" placeholder="验证码" :rules="[{ required: true, message: '请填验证码' }]">
+				<van-field required type="digit" v-model="verificationCode" name="verificationCode" label="验证码" placeholder="验证码" :rules="[{ required: true, message: '请填验证码' }]">
 					<template #button>
 						<van-button block size="mini" type="primary" text="发送验证码" native-type="button" />
 					</template>
 				</van-field>
 				<Picker :required="true" name="bank" title="新开户银行" placeholder="新开户银行" v-model="bank" :columns="banks" :rules="[{ required: true, message: '请选择新开户银行' }]" />
-				<van-field class="required" v-model="bankCode" type="digit" name="bankCode" label="新银行账号" placeholder="新银行账号" :rules="[{ required: true, message: '请填新银行账号' }]" />
-				<van-field class="required" v-model="newAccountName" name="newAccountName" label="新开户人名称" placeholder="新开户人名称" :rules="[{ required: true, message: '请填新开户人名称' }]" />
+				<van-field required v-model="bankCode" type="digit" name="bankCode" label="新银行账号" placeholder="新银行账号" :rules="[{ required: true, message: '请填新银行账号' }]" />
+				<van-field required v-model="newAccountName" name="newAccountName" label="新开户人名称" placeholder="新开户人名称" :rules="[{ required: true, message: '请填新开户人名称' }]" />
 				<van-field v-model="remark" rows="2" name="remark" autosize label="备注" type="textarea" maxlength="50" placeholder="备注" show-word-limit />
 			</div>
 			<div class="infoWrapper">

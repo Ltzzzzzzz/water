@@ -2,27 +2,21 @@
 	<div class="signature" @click="visible = true">
 		<h4 class="label" :class="{ required }">{{ label }}</h4>
 		<div class="vanWrapper">
-			<van-field :name="name" :rules="rules">
-				<template #input>
-					<div class="hidden">
-						<van-uploader v-model="fileList" max-count="1" />
+			<div class="signatureWrapper">
+				<div class="iconWrapper" v-if="!file.content">
+					<van-icon size="40" color="#dcdee0" name="edit" />
+				</div>
+				<div class="imageWrapper" v-else>
+					<div class="iconWrapper" @click.stop="file = {}">
+						<van-icon color="#ffffff" name="cross" />
 					</div>
-					<div class="signatureWrapper">
-						<div class="iconWrapper" v-if="!fileList.length">
-							<van-icon size="40" color="#dcdee0" name="edit" />
-						</div>
-						<div class="imageWrapper" v-else>
-							<div class="iconWrapper" @click.stop="fileList = []">
-								<van-icon color="#ffffff" name="cross" />
-							</div>
-							<van-image width="100%" height="100%" :src="fileList[0].content" />
-						</div>
-					</div>
-				</template>
-			</van-field>
+					<van-image width="100%" height="100%" :src="file.content" />
+				</div>
+			</div>
+			<van-field :name="name" :rules="rules" v-model="file.fileStr" />
 		</div>
 		<van-popup v-model="visible" round :close-on-click-overlay="false" get-container="body">
-			<SignatureBoard :visible.sync="visible" :fileList.sync="fileList" />
+			<SignatureBoard :visible.sync="visible" :file.sync="file" />
 		</van-popup>
 	</div>
 </template>
@@ -38,7 +32,7 @@ export default {
 	data() {
 		return {
 			visible: false,
-			fileList: []
+			file: {}
 		};
 	}
 };
@@ -76,6 +70,16 @@ export default {
 		}
 	}
 	.vanWrapper {
+		padding: 10px 16px;
+		/deep/.van-cell {
+			padding: 0;
+			&:after {
+				display: none;
+			}
+			.van-field__body {
+				display: none;
+			}
+		}
 		.hidden {
 			display: none;
 		}

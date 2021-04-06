@@ -5,9 +5,9 @@
 				<h4 class="title">填写表单信息</h4>
 				<Picker :required="true" name="region" title="区域" placeholder="区域" v-model="region" :columns="regions" :rules="[{ required: true, message: '请选择区域' }]" />
 				<van-field v-model="userName" name="userName" label="用户名" placeholder="用户名" />
-				<van-field class="required" v-model="address" name="address" label="用水地址" placeholder="用水地址" :rules="[{ required: true, message: '请填用水地址' }]" />
+				<van-field required v-model="address" name="address" label="用水地址" placeholder="用水地址" :rules="[{ required: true, message: '请填用水地址' }]" />
 				<Picker :required="true" name="caliber" title="口径" placeholder="口径" v-model="caliber" :columns="calibers" :rules="[{ required: true, message: '请选择口径' }]" />
-				<van-field class="required" type="digit" v-model="applications" name="applications" label="申请户数" placeholder="申请户数" :rules="[{ required: true, message: '请填申请户数' }]" />
+				<van-field required type="digit" v-model="applications" name="applications" label="申请户数" placeholder="申请户数" :rules="[{ required: true, message: '请填申请户数' }]" />
 				<Picker :required="true" name="nature" title="用水性质" placeholder="用水性质" v-model="nature" :columns="natures" :rules="[{ required: true, message: '请选择用水性质' }]" />
 				<Picker
 					:required="true"
@@ -18,21 +18,13 @@
 					:columns="certificates"
 					:rules="[{ required: true, message: '请选择证件类型' }]"
 				/>
-				<van-field class="required" v-model="certificate" name="certificate" label="证件号码" placeholder="证件号码" :rules="[{ required: true, message: '请填证件号码' }]" />
+				<van-field required v-model="certificate" name="certificate" label="证件号码" placeholder="证件号码" :rules="[{ required: true, message: '请填证件号码' }]" />
 				<Picker :required="true" name="bank" title="开户银行" placeholder="开户银行" v-model="bank" :columns="banks" :rules="[{ required: true, message: '请选择开户银行' }]" />
-				<van-field class="required" v-model="accountName" name="accountName" label="开户人名称" placeholder="开户人名称" :rules="[{ required: true, message: '请填开户人名称' }]" />
-				<van-field class="required" v-model="bankCode" type="digit" name="bankCode" label="银行账号" placeholder="银行账号" :rules="[{ required: true, message: '请填银行账号' }]" />
+				<van-field required v-model="accountName" name="accountName" label="开户人名称" placeholder="开户人名称" :rules="[{ required: true, message: '请填开户人名称' }]" />
+				<van-field required v-model="bankCode" type="digit" name="bankCode" label="银行账号" placeholder="银行账号" :rules="[{ required: true, message: '请填银行账号' }]" />
 
-				<van-field class="required" v-model="contact" name="contact" label="联系人" placeholder="联系人" :rules="[{ required: true, message: '请填联系人' }]" />
-				<van-field
-					type="tel"
-					class="required"
-					v-model="phoneNumber"
-					name="phoneNumber"
-					label="手机号码"
-					placeholder="手机号码"
-					:rules="[{ validator: phoneReg, message: '请填正确的手机号码' }]"
-				/>
+				<van-field required v-model="contact" name="contact" label="联系人" placeholder="联系人" :rules="[{ required: true, message: '请填联系人' }]" />
+				<van-field type="tel" required v-model="phoneNumber" name="phoneNumber" label="手机号码" placeholder="手机号码" :rules="[{ validator: phoneReg, message: '请填正确的手机号码' }]" />
 				<van-field type="tel" v-model="tell" name="tell" label="联系电话" placeholder="联系电话" :rules="[{ validator: telReg, message: '请填正确的电话号码' }]" />
 			</div>
 			<div class="infoWrapper">

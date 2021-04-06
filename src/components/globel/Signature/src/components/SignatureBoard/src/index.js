@@ -66,7 +66,7 @@ class Signature {
 	save() {
 		let url = saveAsPNG(this.canvas),
 			blob = dataURLtoBlob(url),
-			file = blobToFile(blob, 'test');
+			file = blobToFile(blob, 'sign.png');
 		return {
 			content: url,
 			file
